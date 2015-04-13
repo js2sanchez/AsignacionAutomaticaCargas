@@ -11,6 +11,7 @@
   "devDependencies": {
     "grunt-contrib-clean": "*",
     "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "^0.6.1",
     "load-grunt-tasks": "^1.0.0"
   }
 }

@@ -20,6 +20,25 @@ module.exports = function(grunt) {
 				'Content/css/main.min.css',
 				//'js/scripts.min.js'
 			]
+		},
+		watch: {
+		    less: {
+		        files: [
+					'Content/less/**/*.less',
+                    'Content/less/pages/homepage.less'
+		        ],
+		        tasks: ['less']
+		    },
+		    js: {
+		        files: [
+                   // 'Content/js/app/*.js'
+		        ],
+		        tasks: ['uglify']
+		    },
+		    options: {
+		        spawn: true,
+		        livereload: true
+		    }
 		}
 	});
 
@@ -29,7 +48,8 @@ module.exports = function(grunt) {
 	// Register tasks
 	grunt.registerTask('default', [
 		'clean',
-		'less'
+		'less',
+        'watch'
 	]);
 
 };

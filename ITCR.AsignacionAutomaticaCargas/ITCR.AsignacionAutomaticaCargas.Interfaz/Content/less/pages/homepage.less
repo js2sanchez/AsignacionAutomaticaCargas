@@ -1,8 +1,33 @@
 ﻿.homepage {
-    background-image: url("/Content/images/White-Gray-Background.png");
+    background: url("/Content/images/White-Gray-Background.png") no-repeat center center fixed;
+    background-size: cover;
  	height: 100%;
-	background-size: cover;
-	background-position: 50% 50%;
-	position: relative;
-    width: 100%;
+    width: 100%;  
+
+    h2{
+        font-family: @font-medium;
+        margin-bottom: 20px;
+    }
+
+    h3{
+        font-family: @font-primary;
+    }
+    
+    section:not(:first-child){
+        padding-top: 50px;
+    }
+
+    input{
+        margin-bottom: 1em;
+    }
+
+    input:not([type="checkbox"]){
+        padding: 5px 10px;
+        min-width: 290px;
+    }
+
+     .section-form{
+         min-width: 320px;
+         max-width: 450px;
+     }
 }
