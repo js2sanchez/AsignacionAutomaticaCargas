@@ -11,7 +11,7 @@
 			    </div>
 		    </div>
 	    </section>
-        <section>
+        <section class="content-options">
             <div class="col-xs-12 col-sm-12 col-md-10 col-md col-center">
 				<ul class="row list-unstyled">
 					<li class="col-md-6 col-sm-6">
@@ -27,7 +27,7 @@
 				</ul>
 			</div>
         </section>
-        <section>
+        <section class="footer">
             <div class="col-xs-10 col-md-6 col-center text-center">
                 <h2> Instituto Tecnologico de Costa Rica </h2>
                 <h4> Copyright © 2015 Tech Forward All Rights Reserved </h4>

@@ -16,7 +16,7 @@
     <link href="~/Content/css/main.min.css" rel="stylesheet" type="text/css"/> 
 
 </head>
-<body>
+<body class="default-background">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
