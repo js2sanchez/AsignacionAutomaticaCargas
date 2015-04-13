@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{981B243E-D77A-4EDB-B46B-22439E8D4A8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITCR.AsignacionAutomaticaCargas.Negocios</RootNamespace>
+    <AssemblyName>ITCR.AsignacionAutomaticaCargas.Negocios</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClasesNegocios\cContactoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cCursoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cDepartamentoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cDiasFranjaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cEvaluacionProfesorNegocios.cs" />
+    <Compile Include="ClasesNegocios\cFranjaHorariaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cGradoAcademicoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cGrupoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cJornadaLaboralNegocios.cs" />
+    <Compile Include="ClasesNegocios\cModalidadNegocios.cs" />
+    <Compile Include="ClasesNegocios\cPeriodoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cPreferenciaCursoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cPreferenciaHorariosNegocios.cs" />
+    <Compile Include="ClasesNegocios\cPreferenciasCursoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cProfesorNegocios.cs" />
+    <Compile Include="ClasesNegocios\cSedeNegocios.cs" />
+    <Compile Include="ClasesNegocios\cTipoContactoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cTipoPrioridadNegocios.cs" />
+    <Compile Include="ClasesNegocios\cTipoProfesorNegocios.cs" />
+    <Compile Include="ClasesNegocios\cTipoUsuarioNegocios.cs" />
+    <Compile Include="ClasesNegocios\cUsuarioNegocios.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITCR.AsignacionAutomaticaCargas.Datos\ITCR.AsignacionAutomaticaCargas.Datos.csproj">
+      <Project>{fa6339b3-ce51-4444-beb6-4946bcf637a6}</Project>
+      <Name>ITCR.AsignacionAutomaticaCargas.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

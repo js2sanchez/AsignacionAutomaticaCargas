@@ -1,0 +1,35 @@
+.navigation-bar {
+	background-color: @color-navigation-background;
+	color: @color-top-navigation-txt;
+    height: 50px;
+    border-bottom: 0px;
+    li {
+        height: 50px;
+        vertical-align: middle;
+        line-height: 50px;
+        a {
+            border-radius: 0;
+            height: 100%;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            &:hover{
+                background-color:lighten(@color-navigation-background, 20%);
+            }
+        }
+
+        &.active{
+            background-color:lighten(@color-navigation-background, 20%);
+        }
+        &:hover{
+           background-color:lighten(@color-navigation-background, 20%);
+        }
+    }
+
+    @media (min-width: @screen-sm) {
+    }
+}
+
+.nav-justified{
+    width: 35%;
+}

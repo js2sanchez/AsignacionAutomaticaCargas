@@ -1,0 +1,16 @@
+{
+  "name": "ITCR.AsignacionAutomaticaCargas.Interfaz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-less": "*",
+    "load-grunt-tasks": "^1.0.0"
+  }
+}

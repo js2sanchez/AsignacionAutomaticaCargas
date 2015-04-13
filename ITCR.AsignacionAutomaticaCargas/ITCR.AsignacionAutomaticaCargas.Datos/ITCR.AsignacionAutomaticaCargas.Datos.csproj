@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA6339B3-CE51-4444-BEB6-4946BCF637A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITCR.AsignacionAutomaticaCargas.Datos</RootNamespace>
+    <AssemblyName>ITCR.AsignacionAutomaticaCargas.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cBDInteraccionBase.cs" />
+    <Compile Include="ClasesBase\cContactoBase.cs" />
+    <Compile Include="ClasesBase\cCursoBase.cs" />
+    <Compile Include="ClasesBase\cDepartamentoBase.cs" />
+    <Compile Include="ClasesBase\cDiasFranjaBase.cs" />
+    <Compile Include="ClasesBase\cEvaluacionProfesorBase.cs" />
+    <Compile Include="ClasesBase\cFranjaHorariaBase.cs" />
+    <Compile Include="ClasesBase\cGradoAcademicoBase.cs" />
+    <Compile Include="ClasesBase\cGrupoBase.cs" />
+    <Compile Include="ClasesBase\cJornadaLaboralBase.cs" />
+    <Compile Include="ClasesBase\cModalidadBase.cs" />
+    <Compile Include="ClasesBase\cPeriodoBase.cs" />
+    <Compile Include="ClasesBase\cPreferenciaCursoBase.cs" />
+    <Compile Include="ClasesBase\cPreferenciaHorariosBase.cs" />
+    <Compile Include="ClasesBase\cPreferenciasCursoBase.cs" />
+    <Compile Include="ClasesBase\cProfesorBase.cs" />
+    <Compile Include="ClasesBase\cSedeBase.cs" />
+    <Compile Include="ClasesBase\cTipoContactoBase.cs" />
+    <Compile Include="ClasesBase\cTipoPrioridadBase.cs" />
+    <Compile Include="ClasesBase\cTipoProfesorBase.cs" />
+    <Compile Include="ClasesBase\cTipoUsuarioBase.cs" />
+    <Compile Include="ClasesBase\cUsuarioBase.cs" />
+    <Compile Include="ClasesDatos\cContactoDatos.cs" />
+    <Compile Include="ClasesDatos\cCursoDatos.cs" />
+    <Compile Include="ClasesDatos\cDepartamentoDatos.cs" />
+    <Compile Include="ClasesDatos\cDiasFranjaDatos.cs" />
+    <Compile Include="ClasesDatos\cEvaluacionProfesorDatos.cs" />
+    <Compile Include="ClasesDatos\cFranjaHorariaDatos.cs" />
+    <Compile Include="ClasesDatos\cGradoAcademicoDatos.cs" />
+    <Compile Include="ClasesDatos\cGrupoDatos.cs" />
+    <Compile Include="ClasesDatos\cJornadaLaboralDatos.cs" />
+    <Compile Include="ClasesDatos\cModalidadDatos.cs" />
+    <Compile Include="ClasesDatos\cPeriodoDatos.cs" />
+    <Compile Include="ClasesDatos\cPreferenciaCursoDatos.cs" />
+    <Compile Include="ClasesDatos\cPreferenciaHorariosDatos.cs" />
+    <Compile Include="ClasesDatos\cPreferenciasCursoDatos.cs" />
+    <Compile Include="ClasesDatos\cProfesorDatos.cs" />
+    <Compile Include="ClasesDatos\cSedeDatos.cs" />
+    <Compile Include="ClasesDatos\cTipoContactoDatos.cs" />
+    <Compile Include="ClasesDatos\cTipoPrioridadDatos.cs" />
+    <Compile Include="ClasesDatos\cTipoProfesorDatos.cs" />
+    <Compile Include="ClasesDatos\cTipoUsuarioDatos.cs" />
+    <Compile Include="ClasesDatos\cUsuarioDatos.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="cProveedorConexion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
