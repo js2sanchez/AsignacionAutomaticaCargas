@@ -10,8 +10,8 @@
         <section>
             <div class="section-form">
                 <div class="log-in">
-                    <input type="text" name="usuario" placeholder="Usuario" maxlength="30"/><br>
-                    <input type="text" name="contrasena" placeholder="Contraseña" maxlength="30"/><br>
+                    <input type="text" name="usuario" class="form-control" placeholder="Usuario" maxlength="30"/><br>
+                    <input type="text" name="contrasena" class="form-control" placeholder="Contraseña" maxlength="30"/><br>
                     <a href="#" class="white-text checkbox-text">¿Olvidó su contraseña?</a><br>
                     <button type="button" class="btn btn-default">Iniciar</button><br>
                     <a href="#">Registresé Aquí</a>
@@ -20,7 +20,7 @@
         </section>
         <section>
             <div class="col-xs-10 col-md-6 col-center text-center">
-                <h2>Instituto Tecnologico de Costa Rica </h2>
+                <h2>Instituto Tecnológico de Costa Rica </h2>
                 <h4> Copyright © 2015 Tech Forward All Rights Reserved </h4>
             </div>
         </section>
