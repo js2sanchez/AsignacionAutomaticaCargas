@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using ITCR.AsignacionAutomaticaCargas.Negocios;
 
 namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
 {
@@ -14,26 +15,40 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
         {
             if (!this.IsPostBack)
             {
-                DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[5] { new DataColumn("idSede"), new DataColumn("codigo_sede"), new DataColumn("nombre_sede"), new DataColumn("editar"), new DataColumn("eliminar") });
-                dt.Rows.Add("1","S001", "Sede Central", "", "");
-                dt.Rows.Add("2","S002", "Sede Regional", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                cargarTablaSedes();
             }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cargarTablaSedes()
         {
+            cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
 
+            DataTable TablaSedes = Sede.Buscar();
+
+            if (TablaSedes.Rows.Count > 0)
+            {
+                dgSedes.DataSource = TablaSedes;
+                dgSedes.DataBind();
+            }
+        }
+
+        protected void dgSedes_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                Int16 IdSede = Int16.Parse(e.Item.Cells[0].Text);
+
+                cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
+
+                Sede.IdSede = IdSede;
+                Sede.Eliminar();
+
+                Response.Redirect("Consultar_Sede.aspx");
+            }
+
+            if (e.CommandName == "Editar")
+            {
+            }
         }
     }
 }

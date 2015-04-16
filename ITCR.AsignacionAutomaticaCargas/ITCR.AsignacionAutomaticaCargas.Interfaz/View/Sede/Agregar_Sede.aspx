@@ -7,14 +7,14 @@
                  <div class="container">
 		            <div class="row row-centered">
 		              <div class="col-xs-6 col-centered col-min">
-		  	            <input type="text" class="form-control" name="company" maxlength="40" placeholder="Codigo de la sede">
+                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="40" placeholder="Codigo de la sede"></asp:TextBox>
 		              </div>
                         <div class="col-xs-6 col-centered col-min">
-		  	            <input type="text" class="form-control" name="company" maxlength="40" placeholder="Nombre de la sede">
+                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="40" placeholder="Nombre de la sede"></asp:TextBox>
 		              </div>
 		            </div>
 		            <div class="row row-centered" style="margin-top:20px;">
-			            <button class="btn btn-default">Agregar</button>
+                        <asp:Button ID="btnAgregar" runat="server" class="btn btn-default" Text="Agregar" OnClick="btnAgregar_Click" />
 		            </div>
 	              </div>
             </div>

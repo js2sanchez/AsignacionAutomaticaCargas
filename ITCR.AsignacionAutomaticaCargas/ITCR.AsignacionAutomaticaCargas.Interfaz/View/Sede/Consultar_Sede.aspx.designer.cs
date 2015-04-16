@@ -13,12 +13,12 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede {
     public partial class Consultar_Sede {
         
         /// <summary>
-        /// GridView1 control.
+        /// dgSedes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid GridView1;
+        protected global::System.Web.UI.WebControls.DataGrid dgSedes;
     }
 }

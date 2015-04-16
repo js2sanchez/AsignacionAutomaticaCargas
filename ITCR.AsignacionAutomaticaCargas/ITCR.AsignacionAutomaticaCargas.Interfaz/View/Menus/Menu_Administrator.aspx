@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrator.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.Views.Administrator.Administrator" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu_Administrator.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.Views.Administrator.Administrator" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="adminpage">

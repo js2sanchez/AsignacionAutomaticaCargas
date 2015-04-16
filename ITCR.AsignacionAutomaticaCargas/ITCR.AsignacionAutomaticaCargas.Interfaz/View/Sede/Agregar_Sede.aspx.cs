@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using ITCR.AsignacionAutomaticaCargas.Negocios;
 
 namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
 {
@@ -11,7 +13,22 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                //Codigo
+            }
+        }
 
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
+            Sede.CodigoSede = txtCodigo.Text;
+            Sede.NombreSede = txtNombre.Text;
+            Sede.Eliminado = 0;
+
+            Sede.Insertar();
+
+            Response.Redirect("Consultar_Sede.aspx");
         }
     }
 }
