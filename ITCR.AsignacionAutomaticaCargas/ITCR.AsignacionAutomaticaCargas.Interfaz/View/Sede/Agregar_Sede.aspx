@@ -7,10 +7,10 @@
                  <div class="container">
 		            <div class="row row-centered">
 		              <div class="col-xs-6 col-centered col-min">
-		  	            <input type="text" class="form-control" name="company" maxlength="40" placeholder="Nombre de la sede">
-		              </div>
-		              <div class="col-xs-6 col-centered col-min">
 		  	            <input type="text" class="form-control" name="company" maxlength="40" placeholder="Codigo de la sede">
+		              </div>
+                        <div class="col-xs-6 col-centered col-min">
+		  	            <input type="text" class="form-control" name="company" maxlength="40" placeholder="Nombre de la sede">
 		              </div>
 		            </div>
 		            <div class="row row-centered" style="margin-top:20px;">

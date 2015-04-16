@@ -5,7 +5,7 @@
             <h3>Consultar sedes</h3>
             <asp:DataGrid ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped table-hover"
                 Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-                <HeaderStyle Font-Bold="True" Font-Size="Larger" ForeColor="Black" HorizontalAlign="Center" />
+                <HeaderStyle Font-Size="Larger" ForeColor="Black" HorizontalAlign="Center" />
                 <Columns>
                     <asp:BoundColumn DataField="idSede" HeaderText="idSede" Visible="False"></asp:BoundColumn>
                     <asp:BoundColumn DataField="codigo_sede" HeaderText="Código"></asp:BoundColumn>

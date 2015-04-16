@@ -19,6 +19,13 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
                 dt.Rows.Add("1","S001", "Sede Central", "", "");
                 dt.Rows.Add("2","S002", "Sede Regional", "", "");
                 dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
+                dt.Rows.Add("3", "S003", "Centro Academico", "", "");
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }

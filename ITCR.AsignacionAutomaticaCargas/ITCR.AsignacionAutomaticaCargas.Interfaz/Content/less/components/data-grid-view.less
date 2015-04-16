@@ -1,10 +1,42 @@
 ﻿table{
     margin: 2em 0;
+    .table-striped {
+        .table-style{
+            background-color: @color-cloud-burst;
+            tbody tr:hover {
+              background-color: rgba(53,121,171,.2);
+            }
+        }
+    }
+    .glyphicon {
+        line-height: 2;
+    }
 }
+
 
 // OVERWRITTING BOOTSTRAP STYLE
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th{
     background-color: @color-concrete;
+}
+
+.table-striped > tbody > tr:first-child td{ 
+    background-color: @color-cloud-burst;
+    color: @color-white;
+    &:hover{
+        background-color: @color-cloud-burst;
+    }
+}
+
+.table-striped > tbody > tr:first-child {
+    &:hover td {
+        background-color: @color-cloud-burst;
+    }
+}
+
+.table-striped > tbody > tr:not(first-child) {
+    &:hover td {
+        background-color: rgba(53,121,171,.2);
+    }
 }
 
 .table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th{
@@ -14,3 +46,4 @@
 .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td{
     vertical-align:middle;
 }
+
