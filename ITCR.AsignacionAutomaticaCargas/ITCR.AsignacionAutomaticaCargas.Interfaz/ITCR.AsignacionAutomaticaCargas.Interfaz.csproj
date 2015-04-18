@@ -172,13 +172,25 @@
     <Content Include="Content\images\header.jpg" />
     <Content Include="Content\images\Jonathan-220.jpg" />
     <Content Include="Content\images\logo2.png" />
-    <Content Include="Content\images\Rebeca-220.jpg" />
+    <Content Include="Content\images\Rebeka-220.jpg" />
     <Content Include="Content\images\Tatiana-220.jpg" />
     <Content Include="Content\images\White-Gray-Background.png" />
+    <Content Include="Content\less\components\footer.css">
+      <DependentUpon>footer.less</DependentUpon>
+    </Content>
     <Content Include="Content\less\general.css" />
     <Content Include="Content\less\general.min.css" />
+    <Content Include="Content\less\pages\acerca-de.css">
+      <DependentUpon>acerca-de.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\pages\acerca-de.min.css">
+      <DependentUpon>acerca-de.css</DependentUpon>
+    </Content>
     <Content Include="Content\less\variables\breakpoints.css" />
     <Content Include="Content\less\variables\breakpoints.min.css" />
+    <Content Include="Content\less\variables\colors.css">
+      <DependentUpon>colors.less</DependentUpon>
+    </Content>
     <Content Include="Content\less\variables\font-family.css" />
     <Content Include="Content\less\variables\font-family.min.css" />
     <Content Include="Content\Site.css" />
@@ -229,6 +241,16 @@
     <Content Include="Home.Master" />
     <Content Include="Content\less\pages\acerca-de.less" />
     <Content Include="Content\less\pages\admin-professor.less" />
+    <Content Include="Content\less\components\footer.css.map">
+      <DependentUpon>footer.css</DependentUpon>
+    </Content>
+    <Content Include="Content\less\variables\colors.css.map">
+      <DependentUpon>colors.css</DependentUpon>
+    </Content>
+    <Content Include="Content\less\pages\acerca-de.css.map">
+      <DependentUpon>acerca-de.css</DependentUpon>
+    </Content>
+    <Content Include="Content\less\components\data-grid-view.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -265,6 +287,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\Acerca de\Acerca_De.aspx" />
+    <Content Include="View\Curso\Agregar_Curso.aspx" />
     <Content Include="View\Menus\Menu_Administrator.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Profesor\Profesor_Agregar.aspx" />
@@ -456,18 +479,28 @@
     </Compile>
     <Compile Include="View\Acerca de\Acerca_De.aspx.cs">
       <DependentUpon>Acerca_De.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Acerca de\Acerca_De.aspx.designer.cs">
       <DependentUpon>Acerca_De.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Curso\Agregar_Curso.aspx.cs">
+      <DependentUpon>Agregar_Curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Curso\Agregar_Curso.aspx.designer.cs">
+      <DependentUpon>Agregar_Curso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Menus\Menu_Administrator.aspx.cs">
       <DependentUpon>Menu_Administrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Menus\Menu_Administrator.aspx.designer.cs">
       <DependentUpon>Menu_Administrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Menus\Menu_Profesor.aspx.cs">
       <DependentUpon>Menu_Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Menus\Menu_Profesor.aspx.designer.cs">
       <DependentUpon>Menu_Profesor.aspx</DependentUpon>
@@ -481,12 +514,14 @@
     </Compile>
     <Compile Include="View\Sede\Agregar_Sede.aspx.cs">
       <DependentUpon>Agregar_Sede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Sede\Agregar_Sede.aspx.designer.cs">
       <DependentUpon>Agregar_Sede.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Sede\Consultar_Sede.aspx.cs">
       <DependentUpon>Consultar_Sede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Sede\Consultar_Sede.aspx.designer.cs">
       <DependentUpon>Consultar_Sede.aspx</DependentUpon>
@@ -495,7 +530,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="View\Administrador\" />
-    <Folder Include="View\Curso\" />
     <Folder Include="View\Departamento\" />
   </ItemGroup>
   <ItemGroup>

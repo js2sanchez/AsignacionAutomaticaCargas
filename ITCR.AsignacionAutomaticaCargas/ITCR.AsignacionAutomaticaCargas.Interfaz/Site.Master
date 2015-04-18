@@ -58,8 +58,8 @@
                                     </a>
 					  	        </div>
                                 <ul class="nav nav-justified pull-right">
-						  	        <li class="active text-center">
-							          <a href="#"> Acerca de </a>
+						  	        <li class="text-center">
+							          <a href="/View/Acerca de/Acerca_De.aspx"> Acerca de </a>
                                     </li>
                                     <li class="text-center">
 							          <a href="#"> Inicio </a>

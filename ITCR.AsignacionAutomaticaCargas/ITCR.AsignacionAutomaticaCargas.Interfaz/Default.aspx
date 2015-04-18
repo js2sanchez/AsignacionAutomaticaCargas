@@ -10,16 +10,16 @@
         <section>
             <div class="section-form">
                 <div class="log-in">
-                    <input type="text" name="usuario" class="form-control" placeholder="Usuario" maxlength="30"/><br>
-                    <input type="text" name="contrasena" class="form-control" placeholder="Contraseña" maxlength="30"/><br>
+                    <asp:TextBox ID="txtUsuario" runat="server" class="form-control" maxlength="40" placeholder="Usuario"></asp:TextBox>
+                    <asp:TextBox ID="TextContrasena" runat="server" class="form-control" maxlength="40" placeholder="Contraseña"></asp:TextBox>
                     <a href="#" class="white-text checkbox-text">¿Olvidó su contraseña?</a><br>
-                    <button type="button" class="btn btn-default">Iniciar</button><br>
+                    <asp:Button ID="btnIniciarSesion" runat="server" class="btn btn-default" Text="Iniciar"/><br>
                     <a href="#">Registresé Aquí</a>
                 </div>
             </div>
         </section>
         <section>
-            <div class="col-xs-10 col-md-6 col-center text-center">
+            <div class="col-xs-10 col-md-7 col-center text-center">
                 <h2>Instituto Tecnológico de Costa Rica </h2>
                 <h4> Copyright © 2015 Tech Forward All Rights Reserved </h4>
             </div>

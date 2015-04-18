@@ -28,7 +28,7 @@
 			</div>
         </section>
         <section class="footer">
-            <div class="col-xs-10 col-md-6 col-center text-center">
+            <div class="col-xs-10 col-md-7 col-center text-center">
                 <h2> Instituto Tecnologico de Costa Rica </h2>
                 <h4> Copyright © 2015 Tech Forward All Rights Reserved </h4>
             </div>
