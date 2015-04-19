@@ -290,7 +290,7 @@
     <Content Include="View\Curso\Agregar_Curso.aspx" />
     <Content Include="View\Menus\Menu_Administrator.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
-    <Content Include="View\Profesor\Profesor_Agregar.aspx" />
+    <Content Include="View\Profesor\Agregar_Profesor.aspx" />
     <Content Include="View\Sede\Agregar_Sede.aspx" />
     <Content Include="View\Sede\Consultar_Sede.aspx" />
     <Content Include="Web.config" />
@@ -505,12 +505,12 @@
     <Compile Include="View\Menus\Menu_Profesor.aspx.designer.cs">
       <DependentUpon>Menu_Profesor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Profesor\Profesor_Agregar.aspx.cs">
-      <DependentUpon>Profesor_Agregar.aspx</DependentUpon>
+    <Compile Include="View\Profesor\Agregar_Profesor.aspx.cs">
+      <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Profesor\Profesor_Agregar.aspx.designer.cs">
-      <DependentUpon>Profesor_Agregar.aspx</DependentUpon>
+    <Compile Include="View\Profesor\Agregar_Profesor.aspx.designer.cs">
+      <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Sede\Agregar_Sede.aspx.cs">
       <DependentUpon>Agregar_Sede.aspx</DependentUpon>

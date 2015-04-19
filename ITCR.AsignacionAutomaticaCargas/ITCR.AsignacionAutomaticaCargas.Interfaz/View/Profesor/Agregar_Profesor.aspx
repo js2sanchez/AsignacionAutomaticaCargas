@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profesor_Agregar.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor.Profesor_Agregar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Agregar_Profesor.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor.Profesor_Agregar" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="multipage">
@@ -26,7 +26,6 @@
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                     </div>
-                    <br />
                     <div class="row row-centered">
                         <div class="col-xs-6 col-centered col-min">
                             <asp:TextBox ID="txtPrimerApellido" runat="server" class="form-control" MaxLength="40" placeholder="Primer apellido" ToolTip="Ejemplo: Montero"></asp:TextBox>
@@ -68,7 +67,6 @@
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                     </div>
-                    <br />
                     <div class="row row-centered">
                         <div class="col-xs-6 col-centered col-min">
                             <asp:TextBox ID="txtDireccion" runat="server" class="form-control" MaxLength="40" placeholder="*Dirección" ToolTip="Ejemplo: Cartago, Cartago Oriental, Los Ángeles,  500 metros Norte de la Basílica de los Ángeles"></asp:TextBox>
@@ -86,26 +84,74 @@
                 <div class="container">
                     <div class="row row-centered">
                         <div class="col-xs-6 col-centered col-min">
-                            <asp:DropDownList ID="drpDepartamento" runat="server"></asp:DropDownList>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtTelefono"
-                                ValidationExpression="([0-9]){8}"
+                            <asp:DropDownList ID="drpDepartamento" runat="server" class="form-control">
+                                <asp:ListItem Text="Departamento" Value="0" />
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-xs-6 col-centered col-min">
+                            <asp:DropDownList ID="drpTipoJornada" runat="server" class="form-control">
+                                <asp:ListItem Text="Tipo de jornada" Value="0" />
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="row row-centered">
+                        <div class="col-xs-6 col-centered col-min">
+                            <asp:DropDownList ID="drpTipoProfesor" runat="server" class="form-control">
+                                <asp:ListItem Text="Tipo de profesor" Value="0" />
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-xs-6 col-centered col-min">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="title2">4. Datos de autenticación </p>
+            <div class="section-form">
+                <div class="container">
+                    <div class="row row-centered">
+                        <div class="col-xs-6 col-centered col-min">
+                            <asp:TextBox ID="txtUsuario" runat="server" class="form-control" MaxLength="30" placeholder="Nombre de usuario" ToolTip="[IMPORTANTE] Debe tener una extensión entre 5 y 30 caracteres y contener únicamente letras, números y los símbolos - _ "></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtUsuario"
+                                class="validation" ValidationGroup="vgRegistrarProfesor">* Dato requerido</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="rev" runat="server" ControlToValidate="txtUsuario"
+                                ValidationExpression="(([0-9A-Za-z]|-|_){5,30})"
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                         <div class="col-xs-6 col-centered col-min">
-                            <asp:TextBox ID="TextBox2" runat="server" class="form-control" MaxLength="80" placeholder="Correo electrónico" ToolTip="Ejemplo: profesor@itcr.ac.cr"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCorreoElectronico"
-                                class="validation" ValidationGroup="vgRegistrarProfesor">* Dato requerido</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtCorreoElectronico"
-                                ValidationExpression=".+@itcr.ac.cr"
+                            <asp:TextBox ID="txtFraseContraseña" runat="server" class="form-control" MaxLength="50" placeholder="*Frase para recordar contraseña" ToolTip="Ejemplo: Nombre de mi primera mascota"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="revFraseContraseña" runat="server" ControlToValidate="txtFraseContraseña"
+                                ValidationExpression="([a-zA-ZÀ-ÿ ])*"
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                     </div>
-                    <br />
                     <div class="row row-centered">
                         <div class="col-xs-6 col-centered col-min">
-                            <asp:TextBox ID="TextBox3" runat="server" class="form-control" MaxLength="40" placeholder="*Dirección" ToolTip="Ejemplo: Cartago, Cartago Oriental, Los Ángeles,  500 metros Norte de la Basílica de los Ángeles"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtDireccion"
-                                ValidationExpression="([a-zA-ZÀ-ÿ0-9 ])*"
+                            <asp:TextBox ID="txtContraseña" runat="server" class="form-control" MaxLength="50" TextMode="Password" placeholder="Contraseña" ToolTip="[IMPORTANTE] La contraseña debe tener mínimo 8 caracteres y contener únicamente letras y números."></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
+                                class="validation" ValidationGroup="vgRegistrarProfesor">* Dato requerido</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revContraseña" runat="server" ControlToValidate="txtContraseña"
+                                ValidationExpression="[0-9A-Za-z]{8,50}"
+                                class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
+                        </div>
+                        <div class="col-xs-6 col-centered col-min">
+                            <asp:TextBox ID="txtConfirmacionContraseña" runat="server" class="form-control" MaxLength="50" TextMode="Password" placeholder="Confirmación de contraseña" ToolTip="[IMPORTANTE] La contraseña debe tener mínimo 8 caracteres y contener únicamente letras y números."></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvConfirmacionContraseña" runat="server" ControlToValidate="txtConfirmacionContraseña"
+                                class="validation" ValidationGroup="vgRegistrarProfesor">* Dato requerido</asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="cvConfirmacionContraseña" runat="server" ControlToCompare="txtContraseña"
+                                ControlToValidate="txtConfirmacionContraseña"
+                                class="validation" Operator="Equal" ValidationGroup="vgRegistrarProfesor">* Contraseña no coincide</asp:CompareValidator>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="title2">5. Notas adicionales </p>
+            <div class="section-form">
+                <div class="container">
+                    <div class="row row-centered">
+                        <div class="col-xs-6 col-centered col-min">
+                            <asp:TextBox ID="txtNotasAdicionales" runat="server" class="form-control" MaxLength="300" placeholder="Notas adicionales"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="revNotasAdicionales" runat="server" ControlToValidate="txtNotasAdicionales"
+                                ValidationExpression="([a-zA-ZÀ-ÿ ])*"
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                         <div class="col-xs-6 col-centered col-min">
