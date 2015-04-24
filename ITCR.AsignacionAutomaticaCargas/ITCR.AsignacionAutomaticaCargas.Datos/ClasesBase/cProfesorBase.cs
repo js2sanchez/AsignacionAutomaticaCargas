@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Profesor'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -50,7 +50,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		///		 <LI>Fk_idDepartamento</LI>
 		///		 <LI>Fk_idJornada</LI>
 		///		 <LI>Fk_idtipoProfesor</LI>
-		///		 <LI>FechaIngreso</LI>
+		///		 <LI>FechaIngreso. May be SqlDateTime.Null</LI>
 		///		 <LI>Fk_idGradoAcademico. May be SqlInt32.Null</LI>
 		///		 <LI>Notas. May be SqlString.Null</LI>
 		///		 <LI>Fk_idUsuario</LI>
@@ -76,7 +76,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamento", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamento));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idJornada", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idJornada));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idtipoProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idtipoProfesor));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idGradoAcademico", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fk_idGradoAcademico));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNotas", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _notas));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
@@ -138,7 +138,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		///		 <LI>Fk_idDepartamento</LI>
 		///		 <LI>Fk_idJornada</LI>
 		///		 <LI>Fk_idtipoProfesor</LI>
-		///		 <LI>FechaIngreso</LI>
+		///		 <LI>FechaIngreso. May be SqlDateTime.Null</LI>
 		///		 <LI>Fk_idGradoAcademico. May be SqlInt32.Null</LI>
 		///		 <LI>Notas. May be SqlString.Null</LI>
 		///		 <LI>Fk_idUsuario</LI>
@@ -164,7 +164,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamento", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamento));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idJornada", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idJornada));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idtipoProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idtipoProfesor));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idGradoAcademico", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fk_idGradoAcademico));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNotas", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _notas));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
@@ -1077,7 +1077,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 					_fk_idDepartamento = (Int32)toReturn.Rows[0]["fk_idDepartamento"];
 					_fk_idJornada = (Int32)toReturn.Rows[0]["fk_idJornada"];
 					_fk_idtipoProfesor = (Int32)toReturn.Rows[0]["fk_idtipoProfesor"];
-					_fechaIngreso = (DateTime)toReturn.Rows[0]["fechaIngreso"];
+					_fechaIngreso = toReturn.Rows[0]["fechaIngreso"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)toReturn.Rows[0]["fechaIngreso"];
 					_fk_idGradoAcademico = toReturn.Rows[0]["fk_idGradoAcademico"] == System.DBNull.Value ? SqlInt32.Null : (Int32)toReturn.Rows[0]["fk_idGradoAcademico"];
 					_notas = toReturn.Rows[0]["Notas"] == System.DBNull.Value ? SqlString.Null : (string)toReturn.Rows[0]["Notas"];
 					_fk_idUsuario = (Int32)toReturn.Rows[0]["fk_idUsuario"];
@@ -1547,7 +1547,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		///		 <LI>Fk_idDepartamento</LI>
 		///		 <LI>Fk_idJornada</LI>
 		///		 <LI>Fk_idtipoProfesor</LI>
-		///		 <LI>FechaIngreso</LI>
+		///		 <LI>FechaIngreso. May be SqlDateTime.Null</LI>
 		///		 <LI>Fk_idGradoAcademico. May be SqlInt32.Null</LI>
 		///		 <LI>Notas. May be SqlString.Null</LI>
 		///		 <LI>Fk_idUsuario</LI>
@@ -1575,7 +1575,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamento", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamento));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idJornada", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idJornada));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idtipoProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idtipoProfesor));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idGradoAcademico", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fk_idGradoAcademico));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNotas", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _notas));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
@@ -1754,11 +1754,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			}
 			set
 			{
-				SqlDateTime fechaIngresoTmp = (SqlDateTime)value;
-				if(fechaIngresoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("FechaIngreso", "FechaIngreso can't be NULL");
-				}
 				_fechaIngreso = value;
 			}
 		}

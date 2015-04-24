@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'tipoUsuario'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -50,7 +50,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>TipoUsuario. May be SqlString.Null</LI>
+		///		 <LI>TipoUsuario</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -88,7 +88,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdTipoUsuario</LI>
-		///		 <LI>TipoUsuario. May be SqlString.Null</LI>
+		///		 <LI>TipoUsuario</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -215,7 +215,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdTipoUsuario</LI>
-		///		 <LI>TipoUsuario. May be SqlString.Null</LI>
+		///		 <LI>TipoUsuario</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'tipoUsuario'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -45,7 +45,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>TipoUsuario. May be SqlString.Null</LI>
+		///		 <LI>TipoUsuario</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -64,7 +64,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 			try
 			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@stipoUsuario", SqlDbType.VarChar, 50, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _tipoUsuario));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@stipoUsuario", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tipoUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidTipoUsuario", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _idTipoUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
@@ -119,7 +119,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdTipoUsuario</LI>
-		///		 <LI>TipoUsuario. May be SqlString.Null</LI>
+		///		 <LI>TipoUsuario</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -138,7 +138,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			try
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidTipoUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idTipoUsuario));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@stipoUsuario", SqlDbType.VarChar, 50, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _tipoUsuario));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@stipoUsuario", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tipoUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
 				if(_conexionBDEsCreadaLocal)
@@ -312,7 +312,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				if(toReturn.Rows.Count > 0)
 				{
 					_idTipoUsuario = (Int32)toReturn.Rows[0]["idTipoUsuario"];
-					_tipoUsuario = toReturn.Rows[0]["tipoUsuario"] == System.DBNull.Value ? SqlString.Null : (string)toReturn.Rows[0]["tipoUsuario"];
+					_tipoUsuario = (string)toReturn.Rows[0]["tipoUsuario"];
 				}
 				return toReturn;
 			}
@@ -410,7 +410,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdTipoUsuario</LI>
-		///		 <LI>TipoUsuario. May be SqlString.Null</LI>
+		///		 <LI>TipoUsuario</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -431,7 +431,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			try
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidTipoUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idTipoUsuario));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@stipoUsuario", SqlDbType.VarChar, 50, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _tipoUsuario));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@stipoUsuario", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tipoUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
 				if(_conexionBDEsCreadaLocal)
@@ -504,6 +504,11 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			}
 			set
 			{
+				SqlString tipoUsuarioTmp = (SqlString)value;
+				if(tipoUsuarioTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("TipoUsuario", "TipoUsuario can't be NULL");
+				}
 				_tipoUsuario = value;
 			}
 		}

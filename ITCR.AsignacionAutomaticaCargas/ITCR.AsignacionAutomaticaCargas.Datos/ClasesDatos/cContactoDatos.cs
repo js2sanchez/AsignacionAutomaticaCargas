@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Contacto'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:51:07 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -41,8 +41,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
 		///		 <LI>Eliminado</LI>
 		/// </UL>
@@ -80,8 +80,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
 		///		 <LI>Eliminado</LI>
 		/// </UL>

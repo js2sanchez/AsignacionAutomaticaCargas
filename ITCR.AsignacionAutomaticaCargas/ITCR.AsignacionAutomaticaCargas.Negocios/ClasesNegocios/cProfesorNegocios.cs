@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'Profesor'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -53,7 +53,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		///		 <LI>Fk_idDepartamento</LI>
 		///		 <LI>Fk_idJornada</LI>
 		///		 <LI>Fk_idtipoProfesor</LI>
-		///		 <LI>FechaIngreso</LI>
+		///		 <LI>FechaIngreso. May be SqlDateTime.Null</LI>
 		///		 <LI>Fk_idGradoAcademico. May be SqlInt32.Null</LI>
 		///		 <LI>Notas. May be SqlString.Null</LI>
 		///		 <LI>Fk_idUsuario</LI>
@@ -105,7 +105,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		///		 <LI>Fk_idDepartamento</LI>
 		///		 <LI>Fk_idJornada</LI>
 		///		 <LI>Fk_idtipoProfesor</LI>
-		///		 <LI>FechaIngreso</LI>
+		///		 <LI>FechaIngreso. May be SqlDateTime.Null</LI>
 		///		 <LI>Fk_idGradoAcademico. May be SqlInt32.Null</LI>
 		///		 <LI>Notas. May be SqlString.Null</LI>
 		///		 <LI>Fk_idUsuario</LI>
@@ -253,7 +253,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		///		 <LI>Fk_idDepartamento</LI>
 		///		 <LI>Fk_idJornada</LI>
 		///		 <LI>Fk_idtipoProfesor</LI>
-		///		 <LI>FechaIngreso</LI>
+		///		 <LI>FechaIngreso. May be SqlDateTime.Null</LI>
 		///		 <LI>Fk_idGradoAcademico. May be SqlInt32.Null</LI>
 		///		 <LI>Notas. May be SqlString.Null</LI>
 		///		 <LI>Fk_idUsuario</LI>

@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Usuario'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -48,7 +48,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// <UL>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -75,7 +75,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@snombre", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nombre));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sprimerApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _primerApellido));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ssegundoApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _segundoApellido));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ssegundoApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _segundoApellido));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@slogin", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _login));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@scontrasena", SqlDbType.VarChar, 200, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _contrasena));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_tipoUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_tipoUsuario));
@@ -138,7 +138,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		///		 <LI>IdUsuario</LI>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -165,7 +165,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@snombre", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nombre));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sprimerApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _primerApellido));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ssegundoApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _segundoApellido));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ssegundoApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _segundoApellido));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@slogin", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _login));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@scontrasena", SqlDbType.VarChar, 200, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _contrasena));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_tipoUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_tipoUsuario));
@@ -500,7 +500,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 					_idUsuario = (Int32)toReturn.Rows[0]["idUsuario"];
 					_nombre = (string)toReturn.Rows[0]["nombre"];
 					_primerApellido = (string)toReturn.Rows[0]["primerApellido"];
-					_segundoApellido = toReturn.Rows[0]["segundoApellido"] == System.DBNull.Value ? SqlString.Null : (string)toReturn.Rows[0]["segundoApellido"];
+					_segundoApellido = (string)toReturn.Rows[0]["segundoApellido"];
 					_login = (string)toReturn.Rows[0]["login"];
 					_contrasena = (string)toReturn.Rows[0]["contrasena"];
 					_fk_tipoUsuario = (Int32)toReturn.Rows[0]["fk_tipoUsuario"];
@@ -679,7 +679,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		///		 <LI>IdUsuario</LI>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -708,7 +708,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@snombre", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nombre));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sprimerApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _primerApellido));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ssegundoApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _segundoApellido));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ssegundoApellido", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _segundoApellido));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@slogin", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _login));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@scontrasena", SqlDbType.VarChar, 200, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _contrasena));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_tipoUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_tipoUsuario));
@@ -823,6 +823,11 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			}
 			set
 			{
+				SqlString segundoApellidoTmp = (SqlString)value;
+				if(segundoApellidoTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("SegundoApellido", "SegundoApellido can't be NULL");
+				}
 				_segundoApellido = value;
 			}
 		}

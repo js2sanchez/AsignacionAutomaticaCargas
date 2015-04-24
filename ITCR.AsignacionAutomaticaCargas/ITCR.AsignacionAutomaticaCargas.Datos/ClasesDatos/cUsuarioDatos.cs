@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Usuario'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -43,7 +43,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// <UL>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -73,7 +73,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		///		 <LI>IdUsuario</LI>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -169,7 +169,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		///		 <LI>IdUsuario</LI>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>

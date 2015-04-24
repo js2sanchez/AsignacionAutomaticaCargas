@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'Usuario'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:09:25 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -52,7 +52,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <UL>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -106,7 +106,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		///		 <LI>IdUsuario</LI>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>
@@ -257,7 +257,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		///		 <LI>IdUsuario</LI>
 		///		 <LI>Nombre</LI>
 		///		 <LI>PrimerApellido</LI>
-		///		 <LI>SegundoApellido. May be SqlString.Null</LI>
+		///		 <LI>SegundoApellido</LI>
 		///		 <LI>Login</LI>
 		///		 <LI>Contrasena</LI>
 		///		 <LI>Fk_tipoUsuario</LI>

@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Contacto'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:51:07 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -24,7 +24,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 	public class cContactoBase : cBDInteraccionBase
 	{
 		#region Declaraciones de miembros de la clase
-			private SqlInt32		_fk_idtipoContacto, _fk_idtipoContactoOld, _fk_idProfesor, _fk_idProfesorOld;
+			private SqlInt32		_fk_idUsuario, _fk_idUsuarioOld, _fk_idtipoContacto, _fk_idtipoContactoOld;
 			private SqlInt16		_eliminado;
 			private SqlString		_contacto;
 		#endregion
@@ -46,8 +46,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
 		///		 <LI>Eliminado</LI>
 		/// </UL>
@@ -67,8 +67,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 			try
 			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesor));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idtipoContacto", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idtipoContacto));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@scontacto", SqlDbType.VarChar, 250, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _contacto));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
@@ -102,76 +102,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			{
 				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
 				throw new Exception("cContactoBase::Insertar::Ocurrió un error." + ex.Message, ex);
-			}
-			finally
-			{
-				if(_conexionBDEsCreadaLocal)
-				{
-					// Cierra la conexión.
-					_conexionBD.Close();
-				}
-				cmdAEjecutar.Dispose();
-			}
-		}
-
-
-		/// <summary>
-		/// Propósito: Método Eliminar para una llave primaria. Este método va a borrar una o más filas en la base de datos, basado en la llave primaria 'fk_idProfesor'
-		/// </summary>
-		/// <returns>True si tuvo éxito, false otherwise. </returns>
-		/// <remarks>
-		/// Propiedades necesarias para este método: 
-		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
-		/// </UL>
-		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
-		/// <UL>
-		///		 <LI>CodError</LI>
-		/// </UL>
-		/// </remarks>
-		public bool EliminarTodo_Con_fk_idProfesor_FK()
-		{
-			SqlCommand	cmdAEjecutar = new SqlCommand();
-			cmdAEjecutar.CommandText = "dbo.[pr_Contacto_EliminarTodo_Con_fk_idProfesor_FK]";
-			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
-
-			// Usar el objeto conexión de la clase base
-			cmdAEjecutar.Connection = _conexionBD;
-
-			try
-			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesor));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
-
-				if(_conexionBDEsCreadaLocal)
-				{
-					// Abre una conexión.
-					_conexionBD.Open();
-				}
-				else
-				{
-					if(_conexionBDProvider.IsTransactionPending)
-					{
-						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
-					}
-				}
-
-				// Ejecuta la consulta.
-				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
-				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
-
-				if(_codError != (int)ITCRError.AllOk)
-				{
-					// Genera un error.
-					throw new Exception("Procedimiento almacenado 'pr_Contacto_EliminarTodo_Con_fk_idProfesor_FK' reportó el error Código: " + _codError);
-				}
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
-				throw new Exception("cContactoBase::EliminarTodo_Con_fk_idProfesor_FK::Ocurrió un error." + ex.Message, ex);
 			}
 			finally
 			{
@@ -256,6 +186,76 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 
 		/// <summary>
+		/// Propósito: Método Eliminar para una llave primaria. Este método va a borrar una o más filas en la base de datos, basado en la llave primaria 'fk_idUsuario'
+		/// </summary>
+		/// <returns>True si tuvo éxito, false otherwise. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idUsuario</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool EliminarTodo_Con_fk_idUsuario_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Contacto_EliminarTodo_Con_fk_idUsuario_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Contacto_EliminarTodo_Con_fk_idUsuario_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cContactoBase::EliminarTodo_Con_fk_idUsuario_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
 		/// Propósito: Método SeleccionarTodos. Este método va a Hacer un SELECT All de tabla.
 		/// </summary>
 		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
@@ -309,79 +309,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			{
 				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
 				throw new Exception("cContactoBase::SeleccionarTodos::Ocurrió un error." + ex.Message, ex);
-			}
-			finally
-			{
-				if(_conexionBDEsCreadaLocal)
-				{
-					// Cierra la conexión.
-					_conexionBD.Close();
-				}
-				cmdAEjecutar.Dispose();
-				adapter.Dispose();
-			}
-		}
-
-
-		/// <summary>
-		/// Propósito: Método SELECT para una llave primaria. Este método hace Select de una o más filas de la base de datos, basado en la llave primaria 'fk_idProfesor'
-		/// </summary>
-		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
-		/// <remarks>
-		/// Propiedades necesarias para este método: 
-		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
-		/// </UL>
-		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
-		/// <UL>
-		///		 <LI>CodError</LI>
-		/// </UL>
-		/// </remarks>
-		public DataTable SeleccionarTodos_Con_fk_idProfesor_FK()
-		{
-			SqlCommand	cmdAEjecutar = new SqlCommand();
-			cmdAEjecutar.CommandText = "dbo.[pr_Contacto_SeleccionarTodos_Con_fk_idProfesor_FK]";
-			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
-			DataTable toReturn = new DataTable("Contacto");
-			SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
-
-			// Usar el objeto conexión de la clase base
-			cmdAEjecutar.Connection = _conexionBD;
-
-			try
-			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesor));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
-
-				if(_conexionBDEsCreadaLocal)
-				{
-					// Abre una conexión.
-					_conexionBD.Open();
-				}
-				else
-				{
-					if(_conexionBDProvider.IsTransactionPending)
-					{
-						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
-					}
-				}
-
-				// Ejecuta la consulta.
-				adapter.Fill(toReturn);
-				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
-
-				if(_codError != (int)ITCRError.AllOk)
-				{
-					// Genera un error.
-					throw new Exception("Procedimiento Almacenado 'pr_Contacto_SeleccionarTodos_Con_fk_idProfesor_FK' reportó el error Código: " + _codError);
-				}
-
-				return toReturn;
-			}
-			catch(Exception ex)
-			{
-				// Ocurrió un error. Le hace Bubble a quien llama y encapsula el objeto Exception
-				throw new Exception("cContactoBase::SeleccionarTodos_Con_fk_idProfesor_FK::Ocurrió un error." + ex.Message, ex);
 			}
 			finally
 			{
@@ -470,14 +397,87 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 
 		/// <summary>
+		/// Propósito: Método SELECT para una llave primaria. Este método hace Select de una o más filas de la base de datos, basado en la llave primaria 'fk_idUsuario'
+		/// </summary>
+		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idUsuario</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public DataTable SeleccionarTodos_Con_fk_idUsuario_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Contacto_SeleccionarTodos_Con_fk_idUsuario_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+			DataTable toReturn = new DataTable("Contacto");
+			SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				adapter.Fill(toReturn);
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento Almacenado 'pr_Contacto_SeleccionarTodos_Con_fk_idUsuario_FK' reportó el error Código: " + _codError);
+				}
+
+				return toReturn;
+			}
+			catch(Exception ex)
+			{
+				// Ocurrió un error. Le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cContactoBase::SeleccionarTodos_Con_fk_idUsuario_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+				adapter.Dispose();
+			}
+		}
+
+
+		/// <summary>
 		/// Propósito: Método Buscar. Este método hace una busqueda de acuerdo con todos los campos de la tabla.
 		/// </summary>
 		/// <returns>DataTable si tuvo éxito, sino genera una Exception. </returns>
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
 		///		 <LI>Eliminado</LI>
 		/// </UL>
@@ -499,8 +499,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 			try
 			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesor));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idtipoContacto", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idtipoContacto));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@scontacto", SqlDbType.VarChar, 250, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _contacto));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
@@ -549,40 +549,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 
 		#region Declaraciones de propiedades de la clase
-		public SqlInt32 Fk_idProfesor
-		{
-			get
-			{
-				return _fk_idProfesor;
-			}
-			set
-			{
-				SqlInt32 fk_idProfesorTmp = (SqlInt32)value;
-				if(fk_idProfesorTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("Fk_idProfesor", "Fk_idProfesor can't be NULL");
-				}
-				_fk_idProfesor = value;
-			}
-		}
-		public SqlInt32 Fk_idProfesorOld
-		{
-			get
-			{
-				return _fk_idProfesorOld;
-			}
-			set
-			{
-				SqlInt32 fk_idProfesorOldTmp = (SqlInt32)value;
-				if(fk_idProfesorOldTmp.IsNull )
-				{
-					throw new ArgumentOutOfRangeException("Fk_idProfesorOld", "Fk_idProfesorOld can't be NULL");
-				}
-				_fk_idProfesorOld = value;
-			}
-		}
-
-
 		public SqlInt32 Fk_idtipoContacto
 		{
 			get
@@ -613,6 +579,40 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 					throw new ArgumentOutOfRangeException("Fk_idtipoContactoOld", "Fk_idtipoContactoOld can't be NULL");
 				}
 				_fk_idtipoContactoOld = value;
+			}
+		}
+
+
+		public SqlInt32 Fk_idUsuario
+		{
+			get
+			{
+				return _fk_idUsuario;
+			}
+			set
+			{
+				SqlInt32 fk_idUsuarioTmp = (SqlInt32)value;
+				if(fk_idUsuarioTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("Fk_idUsuario", "Fk_idUsuario can't be NULL");
+				}
+				_fk_idUsuario = value;
+			}
+		}
+		public SqlInt32 Fk_idUsuarioOld
+		{
+			get
+			{
+				return _fk_idUsuarioOld;
+			}
+			set
+			{
+				SqlInt32 fk_idUsuarioOldTmp = (SqlInt32)value;
+				if(fk_idUsuarioOldTmp.IsNull )
+				{
+					throw new ArgumentOutOfRangeException("Fk_idUsuarioOld", "Fk_idUsuarioOld can't be NULL");
+				}
+				_fk_idUsuarioOld = value;
 			}
 		}
 

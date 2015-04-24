@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'Contacto'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: jueves 23 de abril de 2015, 10:51:07 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -50,8 +50,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
 		///		 <LI>Eliminado</LI>
 		/// </UL>
@@ -68,8 +68,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 			{
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Insertar cContacto;"
-					+"Fk_idProfesor:"+Fk_idProfesor.ToString()+";"
 					+"Fk_idtipoContacto:"+Fk_idtipoContacto.ToString()+";"
+					+"Fk_idUsuario:"+Fk_idUsuario.ToString()+";"
 					+"Contacto:"+Contacto.ToString()+";"
 					+"Eliminado:"+Eliminado.ToString()+";";
 				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
@@ -115,8 +115,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>Fk_idProfesor</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
 		///		 <LI>Eliminado</LI>
 		/// </UL>
