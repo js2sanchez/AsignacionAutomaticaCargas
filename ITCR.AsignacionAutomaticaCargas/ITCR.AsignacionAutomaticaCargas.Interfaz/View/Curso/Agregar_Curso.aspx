@@ -7,23 +7,30 @@
                  <div class="container">
 		            <div class="row row-centered">
 		              <div class="col-xs-6 col-centered col-min">
-                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="40" placeholder="Codigo de la sede"></asp:TextBox>
+                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="40" placeholder="Código del curso" ToolTip="Ejemplo: IC2102"></asp:TextBox>
+                          <asp:RequiredFieldValidator ID="rfvCodigo" runat="server" ControlToValidate="txtCodigo"
+                                class="validation" ValidationGroup="vgAgregarCurso">* Dato requerido</asp:RequiredFieldValidator>
 		              </div>
                         <div class="col-xs-6 col-centered col-min">
-                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="40" placeholder="Nombre de la sede"></asp:TextBox>
-		              </div>
+                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="40" placeholder="Nombre del curso" ToolTip="Ejemplo: Programación Orientada a objetos"></asp:TextBox>
+		                  <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre"
+                                class="validation" ValidationGroup="vgAgregarCurso">* Dato requerido</asp:RequiredFieldValidator>
+                          <asp:RegularExpressionValidator ID="regNombre" runat="server" ControlToValidate="txtNombre"
+                                ValidationExpression="([a-zA-ZÀ-ÿ ])*"
+                                class="validation" ValidationGroup="vgAgregarCurso">* Formato inválido</asp:RegularExpressionValidator>
+                        </div>
 		            </div>
                     <div class="row row-centered">
 		              <div class="col-xs-6 col-centered col-min">
-                          <asp:DropDownList ID="txtGradoAcademico" runat="server" class="form-control" AppendDataBoundItems="true" DataTextField="gradoAcademico" DataValueField="id">
+                          <asp:DropDownList ID="drpGradoAcademico" runat="server" class="form-control">
                             <asp:ListItem Text="Grado Académico" Value="0" />   
                           </asp:DropDownList>
 		              </div>
                         <div class="col-xs-6 col-centered col-min">
                         </div>
 		            </div>
-		            <div class="row row-centered" style="margin-top:20px;">
-                        <asp:Button ID="btnAgregar" runat="server" class="btn btn-default" Text="Agregar" />
+		            <div class="row row-centered">
+                        <asp:Button ID="btnAgregar" runat="server" class="btn btn-default" Text="Agregar" OnClick="btnAgregar_Click" />
 		            </div>
 	              </div>
             </div>

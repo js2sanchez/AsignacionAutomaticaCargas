@@ -288,6 +288,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\Acerca de\Acerca_De.aspx" />
     <Content Include="View\Curso\Agregar_Curso.aspx" />
+    <Content Include="View\Curso\Consultar_Curso.aspx" />
     <Content Include="View\Menus\Menu_Administrator.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
@@ -490,6 +491,13 @@
     </Compile>
     <Compile Include="View\Curso\Agregar_Curso.aspx.designer.cs">
       <DependentUpon>Agregar_Curso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Curso\Consultar_Curso.aspx.cs">
+      <DependentUpon>Consultar_Curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Curso\Consultar_Curso.aspx.designer.cs">
+      <DependentUpon>Consultar_Curso.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Menus\Menu_Administrator.aspx.cs">
       <DependentUpon>Menu_Administrator.aspx</DependentUpon>
