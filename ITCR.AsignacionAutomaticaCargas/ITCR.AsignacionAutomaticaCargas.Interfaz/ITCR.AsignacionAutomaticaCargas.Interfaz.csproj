@@ -291,6 +291,7 @@
     <Content Include="View\Administrador\Consultar_Administrador.aspx" />
     <Content Include="View\Curso\Agregar_Curso.aspx" />
     <Content Include="View\Curso\Consultar_Curso.aspx" />
+    <Content Include="View\Departamento\Consultar_Departamento.aspx" />
     <Content Include="View\Menus\Menu_Administrator.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
@@ -515,6 +516,13 @@
     <Compile Include="View\Curso\Consultar_Curso.aspx.designer.cs">
       <DependentUpon>Consultar_Curso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Departamento\Consultar_Departamento.aspx.cs">
+      <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
+      <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Menus\Menu_Administrator.aspx.cs">
       <DependentUpon>Menu_Administrator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -553,7 +561,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Departamento\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITCR.AsignacionAutomaticaCargas.Datos\ITCR.AsignacionAutomaticaCargas.Datos.csproj">
