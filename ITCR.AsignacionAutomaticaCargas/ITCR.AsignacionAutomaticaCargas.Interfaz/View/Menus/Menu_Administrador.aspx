@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu_Administrator.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.Views.Administrator.Administrator" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu_Administrador.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.Views.Administrator.Administrator" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="adminpage">
@@ -17,8 +17,8 @@
 				<ul class="row list-unstyled">
 					<li class="col-md-4 col-sm-4">
 						<h3>Cursos</h3>
-						<a href="#"> Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="~/View/Curso/Consultar_Curso.aspx"> Consultar</a><br>
+						<a href="~/View/Curso/Agregar_Curso.aspx"> Agregar</a> 
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Departamentos</h3>
@@ -34,8 +34,8 @@
 				<ul class="row list-unstyled">
 					<li class="col-md-4 col-sm-4">
 						<h3>Sedes</h3>
-						<a href="#"> Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="~/View/Sede/Consultar_Sede.aspx"> Consultar</a><br>
+						<a href="~/View/Sede/Agregar_Sede.aspx"> Agregar</a>
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Periodos</h3>
