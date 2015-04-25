@@ -7,10 +7,10 @@
                  <div class="container">
 		            <div class="row row-centered">
 		              <div class="col-xs-6 col-centered col-min">
-                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="40" placeholder="Codigo de la sede"></asp:TextBox>
+                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="40" placeholder="Codigo de la sede" ToolTip="Ejemplo: CA"></asp:TextBox>
 		              </div>
                         <div class="col-xs-6 col-centered col-min">
-                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="40" placeholder="Nombre de la sede"></asp:TextBox>
+                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="40" placeholder="Nombre de la sede" ToolTip="Ejemplo: Cartago"></asp:TextBox>
 		              </div>
 		            </div>
 		            <div class="row row-centered" style="margin-top:20px;">

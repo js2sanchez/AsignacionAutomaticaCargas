@@ -22,6 +22,15 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Curso {
         protected global::System.Web.UI.WebControls.TextBox txtCodigo;
         
         /// <summary>
+        /// rfvCodigo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodigo;
+        
+        /// <summary>
         /// txtNombre control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,31 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Curso {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// txtGradoAcademico control.
+        /// rfvNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtGradoAcademico;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        
+        /// <summary>
+        /// regNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regNombre;
+        
+        /// <summary>
+        /// drpGradoAcademico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpGradoAcademico;
         
         /// <summary>
         /// btnAgregar control.
