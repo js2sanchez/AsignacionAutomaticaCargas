@@ -59,7 +59,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Curso
 
                 //Agregar curso
                 Curso.Insertar();
-                Response.Redirect("Consultar_Curso.aspx");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
             }
         }
 

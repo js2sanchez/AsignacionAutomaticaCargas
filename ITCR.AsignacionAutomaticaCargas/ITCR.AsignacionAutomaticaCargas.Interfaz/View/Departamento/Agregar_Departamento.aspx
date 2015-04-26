@@ -30,10 +30,7 @@
             
         </section>
     </div>
-
     <script  type="text/javascript">
-
-
         function agregar() {
             bootbox.dialog({
                 closeButton: true,
@@ -42,11 +39,15 @@
                 buttons: {
                     success: {
                         label: "Aceptar",
-                        className: "btn-default"
+                        className: "btn-default",
+                        callback: function () {
+                            location.href = "/View/Departamento/Consultar_Departamento.aspx";
+                        }
                     }
                 }
             });
+            //Limpia los campos del form
+            $(".section-form").find('.form-control').val('');
         }
-         </script>
-
+    </script>
 </asp:Content>

@@ -22,8 +22,8 @@
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Departamentos</h3>
-						<a href="#"> Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="/View/Departamento/Consultar_Departamento.aspx"> Consultar</a><br>
+						<a href="/View/Departamento/Agregar_Departamento.aspx"> Agregar</a>
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Grupos</h3>
@@ -39,20 +39,20 @@
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Periodos</h3>
-						<a href="#"> Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="/View/Periodo/Consultar_Periodo.aspx"> Consultar</a><br>
+						<a href="/View/Periodo/Agregar_Periodo.aspx"> Agregar</a>
 					</li>
                     <li class="col-md-4 col-sm-4">
 						<h3>Administradores</h3>
-						<a href="#"> Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="/View/Administrador/Consultar_Administrador.aspx"> Consultar</a><br>
+						<a href="/View/Administrador/Agregar_Administrador.aspx"> Agregar</a>
 					</li>
 				</ul>
 				<ul class="row list-unstyled">
 					<li class="col-md-4 col-sm-4">
 						<h3>Profesores</h3>
-						<a href="#">Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="/View/Profesor/Consultar_Profesores.aspx">Consultar</a><br>
+						<a href="/View/Profesor/Agregar_Profesores.aspx"> Agregar</a>
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Franjas horarias</h3>

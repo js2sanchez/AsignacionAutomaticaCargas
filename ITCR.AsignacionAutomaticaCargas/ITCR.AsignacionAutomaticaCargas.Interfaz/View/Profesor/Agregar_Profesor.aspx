@@ -164,4 +164,34 @@
             </div>
         </section>
     </div>
+    <script type="text/javascript">
+         function agregar() {
+             bootbox.dialog({
+                 closeButton: false,
+                 title: " Se agregó exitosamente ",
+                 message: " ",
+                 buttons: {
+                     success: {
+                         label: "Aceptar",
+                         className: "btn-default",
+                         callback: function () {
+                            location.href = "/Default.aspx";
+                        }
+                     }
+                 }
+             });
+             //Limpia los campos del form
+             $(".section-form").find('.form-control').val('');
+         }
+         function usuarioRegistradoAnteriormente() {
+             bootbox.dialog({
+                 closeButton: true,
+                 title: " El usuario ya existe, intente de nuevo. ",
+                 message: " ",
+                 buttons: {
+                  
+                 }
+             });
+         }
+    </script>
 </asp:Content>

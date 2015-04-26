@@ -32,11 +32,29 @@
                     </div>
                 </div>
             </div>
-        
-
             <div class="row row-centered" style="margin-top: 20px;">
                 <asp:Button ID="btnAgregar" runat="server" class="btn btn-default" Text="Agregar" OnClick="btnAgregar_Click" />
             </div>
         </section>
     </div>
+    <script type="text/javascript">
+         function agregar() {
+             bootbox.dialog({
+                 closeButton: true,
+                 title: " Se agregó exitosamente ",
+                 message: " ",
+                 buttons: {
+                     success: {
+                         label: "Aceptar",
+                         className: "btn-default",
+                         callback: function () {
+                             location.href = "/View/Periodo/Consultar_Periodo.aspx";
+                        }
+                     }
+                 }
+             });
+             //Limpia los campos del form
+             $(".section-form").find('.form-control').val('');
+         }
+    </script>
 </asp:Content>

@@ -87,27 +87,10 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor
             if (Page.IsValid)
             {
                 cUsuarioNegocios Usuario = new cUsuarioNegocios(1, "A", 2, "B");
-
-                //Datos generales
-                Usuario.CedulaIdentidad = txtCedula.Text;
-                Usuario.Nombre = txtNombre.Text;
-                Usuario.PrimerApellido = txtPrimerApellido.Text;
-                Usuario.SegundoApellido = txtSegundoApellido.Text;
-
                 //Datos de autenticacion
                 Usuario.Login = txtUsuario.Text;
-                Usuario.Contrasena = txtConfirmacionContraseña.Text;
-                
-                if (txtFraseContraseña.Text.CompareTo("") != 0)
-                {
-                    Usuario.FraseContrasena = txtFraseContraseña.Text;
-                }
-
-                Usuario.Fk_tipoUsuario = 2;
-                Usuario.Eliminado = 0;
-                Usuario.Insertar();
-
-                Int16 IdUsuario = 0;
+      
+                Int16 IdUsuario = -1;
 
                 DataTable TablaUsuario = Usuario.Buscar();
 
@@ -116,45 +99,79 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor
                     IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["idUsuario"].ToString());
                 }
 
-                //Datos de contacto
-                cContactoNegocios Contacto = new cContactoNegocios(1, "A", 2, "B");
-                Contacto.Contacto = txtTelefono.Text;
-                Contacto.Fk_idtipoContacto = 1;
-                Contacto.Fk_idUsuario = IdUsuario;
-                Contacto.Eliminado = 0;
-                Contacto.Insertar();
-
-                Contacto.Contacto = txtCorreoElectronico.Text;
-                Contacto.Fk_idtipoContacto = 2;
-                Contacto.Fk_idUsuario = IdUsuario;
-                Contacto.Eliminado = 0;
-                Contacto.Insertar();
-
-                if (txtDireccion.Text.CompareTo("") != 0)
+                if (IdUsuario == -1)
                 {
-                    Contacto.Contacto = txtDireccion.Text;
-                    Contacto.Fk_idtipoContacto = 3;
+                    //Datos generales
+                    Usuario.CedulaIdentidad = txtCedula.Text;
+                    Usuario.Nombre = txtNombre.Text;
+                    Usuario.PrimerApellido = txtPrimerApellido.Text;
+                    Usuario.SegundoApellido = txtSegundoApellido.Text;
+
+                    //Datos de autenticacion
+                    Usuario.Contrasena = txtConfirmacionContraseña.Text;
+
+                    if (txtFraseContraseña.Text.CompareTo("") != 0)
+                    {
+                        Usuario.FraseContrasena = txtFraseContraseña.Text;
+                    }
+
+                    Usuario.Fk_tipoUsuario = 2;
+                    Usuario.Eliminado = 0;
+                    Usuario.Insertar();
+
+                    //Buscar 
+                    TablaUsuario = Usuario.Buscar();
+
+                    if (TablaUsuario.Rows.Count > 0)
+                    {
+                        IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["idUsuario"].ToString());
+                    }
+
+                    //Datos de contacto
+                    cContactoNegocios Contacto = new cContactoNegocios(1, "A", 2, "B");
+                    Contacto.Contacto = txtTelefono.Text;
+                    Contacto.Fk_idtipoContacto = 1;
                     Contacto.Fk_idUsuario = IdUsuario;
                     Contacto.Eliminado = 0;
                     Contacto.Insertar();
+
+                    Contacto.Contacto = txtCorreoElectronico.Text;
+                    Contacto.Fk_idtipoContacto = 2;
+                    Contacto.Fk_idUsuario = IdUsuario;
+                    Contacto.Eliminado = 0;
+                    Contacto.Insertar();
+
+                    if (txtDireccion.Text.CompareTo("") != 0)
+                    {
+                        Contacto.Contacto = txtDireccion.Text;
+                        Contacto.Fk_idtipoContacto = 3;
+                        Contacto.Fk_idUsuario = IdUsuario;
+                        Contacto.Eliminado = 0;
+                        Contacto.Insertar();
+                    }
+
+                    cProfesorNegocios Profesor = new cProfesorNegocios(1, "A", 2, "B");
+
+                    //Datos laborales
+                    Profesor.Fk_idDepartamento = Int32.Parse(drpDepartamento.SelectedValue);
+                    Profesor.Fk_idJornada = Int32.Parse(drpTipoJornada.SelectedValue);
+                    Profesor.Fk_idtipoProfesor = Int32.Parse(drpTipoProfesor.Text);
+                    Profesor.Fk_idUsuario = IdUsuario;
+                    Profesor.Eliminado = 0;
+
+                    //Notas adicionales
+                    if (txtNotasAdicionales.Text.CompareTo("") != 0)
+                    {
+                        Profesor.Notas = txtNotasAdicionales.Text;
+                    }
+
+                    Profesor.Insertar();
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
                 }
-
-                cProfesorNegocios Profesor = new cProfesorNegocios(1, "A", 2, "B");
-
-                //Datos laborales
-                Profesor.Fk_idDepartamento = Int32.Parse(drpDepartamento.SelectedValue);
-                Profesor.Fk_idJornada = Int32.Parse(drpTipoJornada.SelectedValue);
-                Profesor.Fk_idtipoProfesor = Int32.Parse(drpTipoProfesor.Text);
-                Profesor.Fk_idUsuario = IdUsuario;
-                Profesor.Eliminado = 0;
-
-                //Notas adicionales
-                if (txtNotasAdicionales.Text.CompareTo("") != 0)
-                {
-                    Profesor.Notas = txtNotasAdicionales.Text;
+                else {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "usuarioRegistradoAnteriormente();", true);
                 }
-
-                Profesor.Insertar();
             }
         }
     }

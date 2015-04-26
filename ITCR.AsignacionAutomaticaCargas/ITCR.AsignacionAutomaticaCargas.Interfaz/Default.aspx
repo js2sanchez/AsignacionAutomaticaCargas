@@ -14,7 +14,7 @@
                     <asp:TextBox ID="txtContrasena" runat="server" class="form-control" maxlength="40" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
                     <a href="#" class="white-text checkbox-text">¿Olvidó su contraseña?</a><br>
                     <asp:Button ID="btnIniciarSesion" runat="server" class="btn btn-default" Text="Iniciar" OnClick="btnIniciarSesion_Click"/><br>
-                    <a href="#">Registresé Aquí</a>
+                    <a href="/View/Profesor/Agregar_Profesor.aspx">Registresé Aquí</a>
                 </div>
             </div>
         </section>
@@ -39,6 +39,5 @@
                 }
             });
         }
-
     </script>
 </asp:Content>

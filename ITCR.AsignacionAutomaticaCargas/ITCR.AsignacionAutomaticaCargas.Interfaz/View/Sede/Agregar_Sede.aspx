@@ -21,24 +21,24 @@
             </div>
         </section>
     </div>
-     <script type="text/javascript">
-         function agregar() {
-             bootbox.dialog({
-                 closeButton: true,
-                 title: " Se agregó exitosamente ",
-                 message: " ",
-                 buttons: {
-                     success: {
-                         label: "Aceptar",
-                         className: "btn-default",
-                         callback: function () {
-                            location.href = "/View/Sede/Consultar_Sede.aspx";
-                        }
-                     }
-                 }
-             });
-             //Limpia los campos del form
-             $(".section-form").find('.form-control').val('');
-         }
-    </script>
+    <script type="text/javascript">
+        function agregar() {
+            bootbox.dialog({
+                closeButton: true,
+                title: " Se agregó exitosamente ",
+                message: " ",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-default",
+                        callback: function () {
+                        location.href = "/View/Sede/Consultar_Sede.aspx";
+                    }
+                    }
+                }
+            });
+            //Limpia los campos del form
+            $(".section-form").find('.form-control').val('');
+        }
+</script>
 </asp:Content>

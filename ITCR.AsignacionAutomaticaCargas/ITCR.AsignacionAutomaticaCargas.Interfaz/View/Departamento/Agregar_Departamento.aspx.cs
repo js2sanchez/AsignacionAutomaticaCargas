@@ -24,21 +24,14 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento
 
             if (Page.IsValid)
             {
-            cDepartamentoNegocios Departamento = new cDepartamentoNegocios(1, "A", 2, "B");
-            Departamento.CodigoDepartamento = txtCodigo.Text;
-            Departamento.NombreDepartamento = txtNombre.Text;
-            Departamento.Eliminado = 0;
+                cDepartamentoNegocios Departamento = new cDepartamentoNegocios(1, "A", 2, "B");
+                Departamento.CodigoDepartamento = txtCodigo.Text;
+                Departamento.NombreDepartamento = txtNombre.Text;
+                Departamento.Eliminado = 0;
 
-            Departamento.Insertar();
-
-            Response.Redirect("Consultar_Departamento.aspx");
+                Departamento.Insertar();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
+            }
         }
-        }
-
-
-
-
-
-
     }
 }

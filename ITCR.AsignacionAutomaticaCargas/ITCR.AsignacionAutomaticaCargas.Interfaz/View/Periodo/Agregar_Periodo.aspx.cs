@@ -43,9 +43,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Periodo
             }
         }
 
-        
-
-
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Validate("vgRegistrarPeriodo");
@@ -59,9 +56,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Periodo
                 Periodo.Eliminado = 0;
                 Periodo.Insertar();
 
-                Response.Redirect("Consultar_Periodo.aspx");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
             }
         }
-
     }
 }
