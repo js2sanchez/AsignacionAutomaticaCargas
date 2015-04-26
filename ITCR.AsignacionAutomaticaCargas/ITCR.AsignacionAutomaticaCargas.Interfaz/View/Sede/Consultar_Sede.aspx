@@ -149,6 +149,55 @@
             </asp:DataGrid>
         </section>
     </div>
+    <script type="text/javascript" >
+        function eliminar(index) {
+            bootbox.dialog({
+                closeButton: true,
+                title: "¿Está seguro que desea eliminarlo del sistema?",
+                message: " ",
+                buttons: {
+                    success: {
+                        label: "Cancelar",
+                        className: "btn-default"
+                    },
+                    main: {
+                        label: "Eliminar",
+                        className: "btn-cancel",
+                        callback: function () {
+                            PageMethods.eliminarConfirmacion(index,OnSuccess, OnError);
+                        }
+                    }
+                }
+            });
+        }
+
+        function endConfirmation() {
+            bootbox.dialog({
+                closeButton: false,
+                title: "Cancelar el proceso de registro",
+                message: "¿Está seguro que desea salir sin guardar?",
+                buttons: {
+                    success: {
+                        label: "No, deseo continuar en el formulario",
+                        className: "btn-primary"
+                    },
+                    main: {
+                        label: "Sí, estoy seguro",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Default.aspx";
+                        }
+                    }                    
+                }
+            });
+
+        function OnSuccess(response) {
+            console.log("El proceso de eliminación se llevó a cabo correctamente.");
+        }
+        function OnError(error) {
+            console.log("error");
+        }
+    </script>
 </asp:Content>
 
 

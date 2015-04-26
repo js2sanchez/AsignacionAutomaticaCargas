@@ -26,7 +26,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento
             cDepartamentoNegocios Departamento = new cDepartamentoNegocios(1, "A", 2, "B");
 
             DataTable TablaDepartamento = Departamento.Buscar();
-
+            
 
             if (TablaDepartamento.Rows.Count > 0)
             {
@@ -44,6 +44,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento
                 cDepartamentoNegocios Departamento = new cDepartamentoNegocios(1, "A", 2, "B");
 
                 Departamento.IdDepartamento = IdDepartamento;
+
                 Departamento.Eliminar();
 
                 Response.Redirect("Consultar_Departamento.aspx");

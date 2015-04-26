@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using ITCR.AsignacionAutomaticaCargas.Negocios;
+using System.Web.Services;
 
 namespace ITCR.AsignacionAutomaticaCargas.Interfaz
 {
@@ -41,10 +42,9 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
             {
                 //Usuario Invalido
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "usuarioInvalido();", true);
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "eliminar();", true);
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
             }   
         }
+
 
     }
 }

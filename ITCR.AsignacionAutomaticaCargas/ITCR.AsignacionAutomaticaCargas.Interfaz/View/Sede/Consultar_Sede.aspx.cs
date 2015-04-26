@@ -6,11 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using ITCR.AsignacionAutomaticaCargas.Negocios;
+using System.Web.Services;
 
 namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
 {
     public partial class Consultar_Sede : System.Web.UI.Page
     {
+        static Int16 IdSede = -1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -36,14 +39,13 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
         {
             if (e.CommandName == "Eliminar")
             {
-                Int16 IdSede = Int16.Parse(e.Item.Cells[0].Text);
+                //IdSede = Int16.Parse(e.Item.Cells[0].Text);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "eliminar();", true);
 
-                cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
+                string code = @"<script type='text/javascript'>eliminar(" + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
 
-                Sede.IdSede = IdSede;
-                Sede.Eliminar();
 
-                Response.Redirect("Consultar_Sede.aspx");
             }
 
             if (e.CommandName == "Editar")
@@ -54,6 +56,16 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             }
+        }
+
+        [WebMethod] 
+        public static void eliminarConfirmacion(int index) {
+           // if (IdSede != -1) {
+                cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
+                Sede.IdSede = index;
+                Sede.Eliminar();
+                //Response.Redirect("Consultar_Sede.aspx");
+            //s} 
         }
     }
 }
