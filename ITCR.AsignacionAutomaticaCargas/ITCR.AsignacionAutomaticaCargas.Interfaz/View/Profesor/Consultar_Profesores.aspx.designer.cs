@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.AsignacionAutomaticaCargas.Interfaz {
+namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor {
     
     
-    public partial class SiteMaster {
+    public partial class Consultar_Profesores {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// dgProfesores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.DataGrid dgProfesores;
     }
 }

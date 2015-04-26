@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Agregar_Sede.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede.Agregar_Sede" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
     <div class="multipage">
         <section class="form-width">
             <h3>Agregar una sede</h3>
@@ -20,4 +21,24 @@
             </div>
         </section>
     </div>
+     <script type="text/javascript">
+         function agregar() {
+             bootbox.dialog({
+                 closeButton: true,
+                 title: " Se agregó exitosamente ",
+                 message: " ",
+                 buttons: {
+                     success: {
+                         label: "Aceptar",
+                         className: "btn-default",
+                         callback: function () {
+                            location.href = "/View/Sede/Consultar_Sede.aspx";
+                        }
+                     }
+                 }
+             });
+             //Limpia los campos del form
+             $(".section-form").find('.form-control').val('');
+         }
+    </script>
 </asp:Content>
