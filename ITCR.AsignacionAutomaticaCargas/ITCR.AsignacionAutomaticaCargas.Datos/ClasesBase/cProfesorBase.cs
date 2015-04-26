@@ -1624,6 +1624,72 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			}
 		}
 
+        public DataTable BuscarTodos()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_Profesor_BuscarTodos]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+            DataTable toReturn = new DataTable("Profesor");
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iidProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idProfesor));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamento", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idJornada", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idJornada));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idtipoProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idtipoProfesor));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@dafechaIngreso", SqlDbType.DateTime, 3, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _fechaIngreso));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idGradoAcademico", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fk_idGradoAcademico));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@sNotas", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _notas));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idUsuario));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                adapter.Fill(toReturn);
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento Almacenado 'pr_Profesor_BuscarTodos' reportó el error Código: " + _codError);
+                }
+
+                return toReturn;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cProfesorBase::BuscarTodos::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+                adapter.Dispose();
+            }
+        }
+
 
 		#region Declaraciones de propiedades de la clase
 		public SqlInt32 IdProfesor

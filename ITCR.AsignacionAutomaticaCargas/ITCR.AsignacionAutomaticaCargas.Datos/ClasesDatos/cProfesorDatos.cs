@@ -185,5 +185,13 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 				//    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
 			return base.Buscar();
 		}
+
+        public DataTable BuscarTodos()
+        {
+            //TODO: agregar % para busqueda de campos string (varchar, etc.) con LIKE (el procedimiento ya lo hace), así:
+            //if (!base.DescripcionCF.IsNull) {
+            //    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
+            return base.BuscarTodos();
+        }
 	} //class
 } //namespace
