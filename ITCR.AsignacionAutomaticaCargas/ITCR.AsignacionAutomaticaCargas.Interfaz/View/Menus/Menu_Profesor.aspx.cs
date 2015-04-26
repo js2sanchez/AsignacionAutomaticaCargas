@@ -11,7 +11,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.Views.Professor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["PaginaActual"] = "~/View/Menus/Menu_Profesor.aspx";
         }
     }
 }

@@ -75,6 +75,20 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
         {
             Context.GetOwinContext().Authentication.SignOut();
         }
+
+        protected void btnAcercaDe_Click(object sender, EventArgs e) {
+            Response.Redirect("/View/Acerca de/Acerca_De.aspx");
+        }
+
+        protected void btnInicio_Click(object sender, EventArgs e) {
+            string paginaActual = Session["PaginaActual"].ToString();
+            Response.Redirect(paginaActual);
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e) {
+            Response.Redirect("/Default.aspx");
+        }
+        
     }
 
 }

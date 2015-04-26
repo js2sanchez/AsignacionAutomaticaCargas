@@ -58,20 +58,11 @@
 						                <img src="/Content/images/logo2.png" alt="">
                                     </a>
 					  	        </div>
-                                <ul class="nav nav-justified pull-right">
-						  	        <li class="text-center">
-							          <a href="/View/Acerca de/Acerca_De.aspx"> Acerca de </a>
-                                    </li>
-                                    <li class="text-center">
-							          <a href="#"> Inicio </a>
-                                    </li>
-                                    <li class="text-center">
-							          <a href="#"> Salir </a>
-                                    </li>
-                                    <li class="visible-xs"><a href="#">Acerca de</a></li>
-                                    <li class="visible-xs"><a href="#">Inicio</a></li>
-                                    <li class="visible-xs"><a href="#">Salir</a></li>
-                                </ul>
+                                <div class="nav nav-justified pull-right">
+						  	        <asp:Button ID="btnAcercaDe" runat="server" class="text-center" Text="Acerca de" OnClick="btnAcercaDe_Click" />
+                                    <asp:Button ID="btnInicio" runat="server" class="text-center" Text="Inicio" OnClick="btnInicio_Click"/>
+                                    <asp:Button ID="btnSalir" runat="server" class="text-center" Text="Salir"  OnClick="btnSalir_Click"/>
+                                </div>
                             </div>
                         </div>
                     </div>
