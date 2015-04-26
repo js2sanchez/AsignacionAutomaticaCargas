@@ -11,9 +11,9 @@
             <div class="section-form">
                 <div class="log-in">
                     <asp:TextBox ID="txtUsuario" runat="server" class="form-control" maxlength="40" placeholder="Usuario"></asp:TextBox>
-                    <asp:TextBox ID="TextContrasena" runat="server" class="form-control" maxlength="40" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="txtContrasena" runat="server" class="form-control" maxlength="40" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
                     <a href="#" class="white-text checkbox-text">¿Olvidó su contraseña?</a><br>
-                    <asp:Button ID="btnIniciarSesion" runat="server" class="btn btn-default" Text="Iniciar"/><br>
+                    <asp:Button ID="btnIniciarSesion" runat="server" class="btn btn-default" Text="Iniciar" OnClick="btnIniciarSesion_Click"/><br>
                     <a href="#">Registresé Aquí</a>
                 </div>
             </div>
@@ -24,6 +24,55 @@
                 <h4> Copyright © 2015 Tech Forward All Rights Reserved </h4>
             </div>
         </section>
-     </div>
+    </div>
+    <script type="text/javascript">
+        function usuarioInvalido() {
+            bootbox.dialog({
+                closeButton: true,
+                title: "Usuario Inválido: Los datos ingresados son incorrectos",
+                message: " ",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-default"
+                    }
+                }
+            });
+        }
 
+        function eliminar() {
+            bootbox.dialog({
+                closeButton: true,
+                title: "¿Está seguro que desea eliminarlo del sistema?",
+                message: " ",
+                buttons: {
+                    success: {
+                        label: "Cancelar",
+                        className: "btn-default"
+                    },
+                    main: {
+                        label: "Eliminar",
+                        className: "btn-cancel",
+                        callback: function () {
+          
+                        }
+                    }
+                }
+            });
+        }
+
+        function agregar() {
+            bootbox.dialog({
+                closeButton: true,
+                title: " Se agregó exitosamente ",
+                message: " ",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-default"
+                    }
+                }
+            });
+        }
+    </script>
 </asp:Content>

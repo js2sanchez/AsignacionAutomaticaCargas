@@ -7,64 +7,73 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Curso {
+namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Periodo {
     
     
-    public partial class Agregar_Curso {
+    public partial class Agregar_Periodo {
         
         /// <summary>
-        /// txtCodigo control.
+        /// txtNumeroPeriodo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroPeriodo;
         
         /// <summary>
-        /// rfvCodigo control.
+        /// rfvNumeroPeriodo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodigo;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNumeroPeriodo;
         
         /// <summary>
-        /// txtNombre control.
+        /// regNumeroPeriodo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regNumeroPeriodo;
         
         /// <summary>
-        /// rfvNombre control.
+        /// txtAnno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtAnno;
         
         /// <summary>
-        /// regNombre control.
+        /// rfvAnno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnno;
         
         /// <summary>
-        /// drpGradoAcademico control.
+        /// revAnno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpGradoAcademico;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revAnno;
+        
+        /// <summary>
+        /// drpModalidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpModalidad;
         
         /// <summary>
         /// btnAgregar control.

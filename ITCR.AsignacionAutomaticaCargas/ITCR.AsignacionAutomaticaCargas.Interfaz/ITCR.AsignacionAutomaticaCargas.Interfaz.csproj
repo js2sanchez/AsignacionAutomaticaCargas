@@ -160,8 +160,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="ActualizarSedes.aspx" />
-    <Content Include="AgregarSedes.aspx" />
     <Content Include="ConsultarSedes.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -179,6 +177,7 @@
     <Content Include="Content\less\components\footer.css">
       <DependentUpon>footer.less</DependentUpon>
     </Content>
+    <None Include="Content\less\components\modal.less" />
     <Content Include="Content\less\general.css" />
     <Content Include="Content\less\general.min.css" />
     <Content Include="Content\less\pages\acerca-de.css">
@@ -253,6 +252,7 @@
     </Content>
     <Content Include="Content\less\components\data-grid-view.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -288,9 +288,17 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\Acerca de\Acerca_De.aspx" />
+    <Content Include="View\Administrador\Agregar_Administrador.aspx" />
+    <Content Include="View\Administrador\Consultar_Administrador.aspx" />
     <Content Include="View\Curso\Agregar_Curso.aspx" />
-    <Content Include="View\Menus\Menu_Administrator.aspx" />
+    <Content Include="View\Curso\Consultar_Curso.aspx" />
+    <Content Include="View\Departamento\Agregar_Departamento.aspx" />
+    <Content Include="View\Departamento\Consultar_Departamento.aspx" />
+    <Content Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx" />
+    <Content Include="View\Menus\Menu_Administrador.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
+    <Content Include="View\Periodo\Agregar_Periodo.aspx" />
+    <Content Include="View\Periodo\Consultar_Periodo.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
     <Content Include="View\Profesor\Consultar_DetalleProfesor.aspx" />
     <Content Include="View\Profesor\Consultar_PerfilProfesor.aspx" />
@@ -415,24 +423,10 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarSedes.aspx.cs">
-      <DependentUpon>ActualizarSedes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ActualizarSedes.aspx.designer.cs">
-      <DependentUpon>ActualizarSedes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="AgregarSedes.aspx.cs">
-      <DependentUpon>AgregarSedes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgregarSedes.aspx.designer.cs">
-      <DependentUpon>AgregarSedes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ConsultarSedes.aspx.cs">
       <DependentUpon>ConsultarSedes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -488,6 +482,20 @@
     <Compile Include="View\Acerca de\Acerca_De.aspx.designer.cs">
       <DependentUpon>Acerca_De.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Administrador\Agregar_Administrador.aspx.cs">
+      <DependentUpon>Agregar_Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrador\Agregar_Administrador.aspx.designer.cs">
+      <DependentUpon>Agregar_Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrador\Consultar_Administrador.aspx.cs">
+      <DependentUpon>Consultar_Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrador\Consultar_Administrador.aspx.designer.cs">
+      <DependentUpon>Consultar_Administrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Curso\Agregar_Curso.aspx.cs">
       <DependentUpon>Agregar_Curso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -495,12 +503,40 @@
     <Compile Include="View\Curso\Agregar_Curso.aspx.designer.cs">
       <DependentUpon>Agregar_Curso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Menus\Menu_Administrator.aspx.cs">
-      <DependentUpon>Menu_Administrator.aspx</DependentUpon>
+    <Compile Include="View\Curso\Consultar_Curso.aspx.cs">
+      <DependentUpon>Consultar_Curso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Menus\Menu_Administrator.aspx.designer.cs">
-      <DependentUpon>Menu_Administrator.aspx</DependentUpon>
+    <Compile Include="View\Curso\Consultar_Curso.aspx.designer.cs">
+      <DependentUpon>Consultar_Curso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Departamento\Agregar_Departamento.aspx.cs">
+      <DependentUpon>Agregar_Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Departamento\Agregar_Departamento.aspx.designer.cs">
+      <DependentUpon>Agregar_Departamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Departamento\Consultar_Departamento.aspx.cs">
+      <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
+      <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx.cs">
+      <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx.designer.cs">
+      <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menus\Menu_Administrador.aspx.cs">
+      <DependentUpon>Menu_Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Menus\Menu_Administrador.aspx.designer.cs">
+      <DependentUpon>Menu_Administrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Menus\Menu_Profesor.aspx.cs">
       <DependentUpon>Menu_Profesor.aspx</DependentUpon>
@@ -508,6 +544,20 @@
     </Compile>
     <Compile Include="View\Menus\Menu_Profesor.aspx.designer.cs">
       <DependentUpon>Menu_Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Periodo\Agregar_Periodo.aspx.cs">
+      <DependentUpon>Agregar_Periodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Periodo\Agregar_Periodo.aspx.designer.cs">
+      <DependentUpon>Agregar_Periodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Periodo\Consultar_Periodo.aspx.cs">
+      <DependentUpon>Consultar_Periodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Periodo\Consultar_Periodo.aspx.designer.cs">
+      <DependentUpon>Consultar_Periodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Profesor\Agregar_Profesor.aspx.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
@@ -554,8 +604,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Administrador\" />
-    <Folder Include="View\Departamento\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITCR.AsignacionAutomaticaCargas.Datos\ITCR.AsignacionAutomaticaCargas.Datos.csproj">

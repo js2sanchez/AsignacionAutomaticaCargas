@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.AsignacionAutomaticaCargas.Interfaz {
+namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento {
     
     
-    public partial class ConsultarSedes {
+    public partial class Agregar_Departamento {
         
         /// <summary>
         /// txtCodigo control.
