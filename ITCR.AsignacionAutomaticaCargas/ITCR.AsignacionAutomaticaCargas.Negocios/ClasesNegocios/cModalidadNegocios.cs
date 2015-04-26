@@ -245,5 +245,27 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 				throw ex;
 			}
 		}
+        /// <summary>
+        /// Próposito: Método Obtener Modalidad.
+        /// Devuelve la modalidad de acuerdo al id dado. 
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        public string obtenerModalidad(int pId)
+        {
+            cModalidadNegocios Modalidad = new cModalidadNegocios(1, "A", 2, "B");
+            Modalidad.IdModalidad = pId;
+            DataTable TablaModalidad = Modalidad.Buscar();
+            string modalidad = "";
+
+            if (TablaModalidad.Rows.Count > 0)
+            {
+                modalidad = TablaModalidad.Rows[0]["modalidad"].ToString();
+            }
+
+            return modalidad;
+        }
+
+
 	} //class
 } //namespace
