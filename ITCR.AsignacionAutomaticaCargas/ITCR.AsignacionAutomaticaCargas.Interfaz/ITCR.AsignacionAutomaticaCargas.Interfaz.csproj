@@ -160,8 +160,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="ActualizarSedes.aspx" />
-    <Content Include="AgregarSedes.aspx" />
     <Content Include="ConsultarSedes.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -291,8 +289,9 @@
     <Content Include="View\Administrador\Consultar_Administrador.aspx" />
     <Content Include="View\Curso\Agregar_Curso.aspx" />
     <Content Include="View\Curso\Consultar_Curso.aspx" />
+    <Content Include="View\Departamento\Agregar_Departamento.aspx" />
     <Content Include="View\Departamento\Consultar_Departamento.aspx" />
-    <Content Include="View\Menus\Menu_Administrator.aspx" />
+    <Content Include="View\Menus\Menu_Administrador.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
     <Content Include="View\Sede\Agregar_Sede.aspx" />
@@ -415,24 +414,10 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarSedes.aspx.cs">
-      <DependentUpon>ActualizarSedes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ActualizarSedes.aspx.designer.cs">
-      <DependentUpon>ActualizarSedes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="AgregarSedes.aspx.cs">
-      <DependentUpon>AgregarSedes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgregarSedes.aspx.designer.cs">
-      <DependentUpon>AgregarSedes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ConsultarSedes.aspx.cs">
       <DependentUpon>ConsultarSedes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -516,6 +501,13 @@
     <Compile Include="View\Curso\Consultar_Curso.aspx.designer.cs">
       <DependentUpon>Consultar_Curso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Departamento\Agregar_Departamento.aspx.cs">
+      <DependentUpon>Agregar_Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Departamento\Agregar_Departamento.aspx.designer.cs">
+      <DependentUpon>Agregar_Departamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Departamento\Consultar_Departamento.aspx.cs">
       <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -523,12 +515,12 @@
     <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
       <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Menus\Menu_Administrator.aspx.cs">
-      <DependentUpon>Menu_Administrator.aspx</DependentUpon>
+    <Compile Include="View\Menus\Menu_Administrador.aspx.cs">
+      <DependentUpon>Menu_Administrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Menus\Menu_Administrator.aspx.designer.cs">
-      <DependentUpon>Menu_Administrator.aspx</DependentUpon>
+    <Compile Include="View\Menus\Menu_Administrador.aspx.designer.cs">
+      <DependentUpon>Menu_Administrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Menus\Menu_Profesor.aspx.cs">
       <DependentUpon>Menu_Profesor.aspx</DependentUpon>
