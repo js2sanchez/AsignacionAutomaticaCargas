@@ -759,6 +759,65 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			}
 		}
 
+        public string AutenticarUsuario()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_Usuario_Autenticar]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+            DataTable toReturn = new DataTable("Resultado");
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@slogin", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _login));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@scontrasena", SqlDbType.VarChar, 200, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _contrasena));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@Result", SqlDbType.VarChar, 50, ParameterDirection.Output, true, 0, 0, "", DataRowVersion.Proposed, ""));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                _filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+                string result = cmdAEjecutar.Parameters["@Result"].Value.ToString();
+                //_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                //if (_codError != (int)ITCRError.AllOk)
+                //{
+                    // Genera un error.
+                   // throw new Exception("Procedimiento Almacenado 'pr_IATUsuario_Validar' reportó el error Codigo: " + _codError);
+               // }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cIATUsuarioBase::Validar::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+            }
+        }
 
 		#region Declaraciones de propiedades de la clase
 		public SqlInt32 IdUsuario

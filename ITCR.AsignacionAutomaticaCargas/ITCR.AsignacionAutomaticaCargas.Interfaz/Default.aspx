@@ -11,9 +11,9 @@
             <div class="section-form">
                 <div class="log-in">
                     <asp:TextBox ID="txtUsuario" runat="server" class="form-control" maxlength="40" placeholder="Usuario"></asp:TextBox>
-                    <asp:TextBox ID="TextContrasena" runat="server" class="form-control" maxlength="40" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="txtContrasena" runat="server" class="form-control" maxlength="40" placeholder="Contraseña"></asp:TextBox>
                     <a href="#" class="white-text checkbox-text">¿Olvidó su contraseña?</a><br>
-                    <asp:Button ID="btnIniciarSesion" runat="server" class="btn btn-default" Text="Iniciar"/><br>
+                    <asp:Button ID="btnIniciarSesion" runat="server" class="btn btn-default" Text="Iniciar" OnClick="btnIniciarSesion_Click"/><br>
                     <a href="#">Registresé Aquí</a>
                 </div>
             </div>

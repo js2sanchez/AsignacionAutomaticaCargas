@@ -189,5 +189,10 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 				//    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
 			return base.Buscar();
 		}
+
+        public string AutenticarUsuario()
+        {
+            return base.AutenticarUsuario();
+        }
 	} //class
 } //namespace

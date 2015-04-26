@@ -281,5 +281,18 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 				throw ex;
 			}
 		}
+
+
+        public string AutenticarUsuario()
+        {
+            try
+            {
+                return base.AutenticarUsuario();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 	} //class
 } //namespace

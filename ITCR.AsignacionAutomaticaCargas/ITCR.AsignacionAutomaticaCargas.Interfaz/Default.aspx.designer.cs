@@ -22,13 +22,13 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
         
         /// <summary>
-        /// TextContrasena control.
+        /// txtContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextContrasena;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
         
         /// <summary>
         /// btnIniciarSesion control.
