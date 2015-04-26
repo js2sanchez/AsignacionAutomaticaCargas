@@ -54,7 +54,7 @@
                         label: "Eliminar",
                         className: "btn-cancel",
                         callback: function () {
-          
+                           
                         }
                     }
                 }

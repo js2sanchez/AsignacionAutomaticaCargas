@@ -42,6 +42,10 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Administrador
                 Usuario.Fk_tipoUsuario = 1;
                 Usuario.Eliminado = 0;
                 Usuario.Insertar();
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
+             //   Page.ClientScript.RegisterStartupScript(this.GetType(), "ShowStatus", "javascript:alert('Record is not updated');", true);
+                
             }
         }
     }
