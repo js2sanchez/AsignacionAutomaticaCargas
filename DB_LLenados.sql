@@ -26,8 +26,8 @@ insert into dbo.GradoAcademico (gradoAcademico, abreviaturaGrado,eliminado)
 select * from gradoAcademico;
 
 -- Contactos
-insert into dbo.TipoContacto (tipoContacto) values ('Email');
 insert into dbo.TipoContacto (tipoContacto) values ('Telefono');
+insert into dbo.TipoContacto (tipoContacto) values ('Correo');
 insert into dbo.TipoContacto (tipoContacto) values ('Direccion');
 insert into dbo.TipoContacto (tipoContacto) values ('Celular');
 select * from dbo.TipoContacto;
