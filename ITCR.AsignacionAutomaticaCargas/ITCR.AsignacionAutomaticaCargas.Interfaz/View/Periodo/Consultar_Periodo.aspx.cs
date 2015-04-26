@@ -24,7 +24,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Periodo
         {
             cPeriodoNegocios Periodo = new cPeriodoNegocios(1, "A", 2, "B");
             cModalidadNegocios Modalidad = new cModalidadNegocios(1, "A", 2, "B");
-
+            Periodo.Eliminado = 0;
             DataTable TablaCursos = Periodo.Buscar();
 
             if (TablaCursos.Rows.Count > 0)
@@ -49,7 +49,15 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Periodo
                 cPeriodoNegocios Periodo = new cPeriodoNegocios(1, "A", 2, "B");
 
                 Periodo.IdPeriodo = IdPeriodo;
-                Periodo.Eliminar();
+                DataTable TablaPeriodo = Periodo.SeleccionarUno();
+
+                if (TablaPeriodo.Rows.Count > 0)
+                { 
+                    Periodo.Eliminado = 1;
+                    Periodo.Actualizar();
+                       
+                }
+                
 
                 Response.Redirect("Consultar_Periodo.aspx");
             }

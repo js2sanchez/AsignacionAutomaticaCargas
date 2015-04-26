@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -24,10 +25,9 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento
         private void cargarTablaDepartamento()
         {
             cDepartamentoNegocios Departamento = new cDepartamentoNegocios(1, "A", 2, "B");
-
             Departamento.Eliminado = 0;
             DataTable TablaDepartamento = Departamento.Buscar();
-            
+
 
             if (TablaDepartamento.Rows.Count > 0)
             {
@@ -45,21 +45,25 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento
                 cDepartamentoNegocios Departamento = new cDepartamentoNegocios(1, "A", 2, "B");
 
                 Departamento.IdDepartamento = IdDepartamento;
-
-               DataTable TablaDepartamento = Departamento.SeleccionarUno();
-               if (TablaDepartamento.Rows.Count > 0)
-               {
-                   Departamento.Eliminado = 1;
-                   Departamento.Actualizar();
-               }
+                DataTable TablaDepartamento = Departamento.SeleccionarUno();
+                if (TablaDepartamento.Rows.Count > 0)
+                {
+                    Departamento.Eliminado = 1;
+                    Departamento.Actualizar();
+                }
                 
-
                 Response.Redirect("Consultar_Departamento.aspx");
             }
 
             if (e.CommandName == "Editar")
             {
             }
+        }
+
+        [WebMethod]
+        public static void metodo()
+        {
+
         }
     }
 }

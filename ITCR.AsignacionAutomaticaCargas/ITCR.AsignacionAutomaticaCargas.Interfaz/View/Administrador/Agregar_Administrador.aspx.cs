@@ -23,26 +23,40 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Administrador
             if (Page.IsValid)
             {
                 cUsuarioNegocios Usuario = new cUsuarioNegocios(1, "A", 2, "B");
-
-                //Datos generales
-                Usuario.CedulaIdentidad = txtCedula.Text;
-                Usuario.Nombre = txtNombre.Text;
-                Usuario.PrimerApellido = txtPrimerApellido.Text;
-                Usuario.SegundoApellido = txtSegundoApellido.Text;
-
-                //Datos de autenticacion
+                   //Validacion 
                 Usuario.Login = txtUsuario.Text;
-                Usuario.Contrasena = txtConfirmacionContraseña.Text;
-
-                if (txtFraseContraseña.Text.CompareTo("") != 0)
+                DataTable TablaUsuario = Usuario.Buscar();
+                Int16 IdUsuario = -1;
+                if (TablaUsuario.Rows.Count > 0)
                 {
-                    Usuario.FraseContrasena = txtFraseContraseña.Text;
+                    IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["idUsuario"].ToString());
                 }
 
-                Usuario.Fk_tipoUsuario = 1;
-                Usuario.Eliminado = 0;
-                Usuario.Insertar();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);  
+                if (IdUsuario == -1)
+                {
+
+                    //Datos generales
+                    Usuario.CedulaIdentidad = txtCedula.Text;
+                    Usuario.Nombre = txtNombre.Text;
+                    Usuario.PrimerApellido = txtPrimerApellido.Text;
+                    Usuario.SegundoApellido = txtSegundoApellido.Text;
+
+                    //Datos de autenticacion
+                    Usuario.Contrasena = txtConfirmacionContraseña.Text;
+
+                    if (txtFraseContraseña.Text.CompareTo("") != 0)
+                    {
+                        Usuario.FraseContrasena = txtFraseContraseña.Text;
+                    }
+
+                    Usuario.Fk_tipoUsuario = 1;
+                    Usuario.Eliminado = 0;
+                    Usuario.Insertar();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
+                }
+                else {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "usuarioRegistradoAnteriormente();", true);
+                }
             }
         }
     }
