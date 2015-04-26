@@ -41,8 +41,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
             {
                 //Usuario Invalido
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "usuarioInvalido();", true);
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "eliminar();", true);
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
             }   
         }
 

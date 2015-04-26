@@ -25,10 +25,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
             Sede.CodigoSede = txtCodigo.Text;
             Sede.NombreSede = txtNombre.Text;
             Sede.Eliminado = 0;
-
             Sede.Insertar();
-
-            Response.Redirect("Consultar_Sede.aspx");
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
         }
     }
 }

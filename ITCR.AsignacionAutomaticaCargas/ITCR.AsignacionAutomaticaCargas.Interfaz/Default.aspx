@@ -39,40 +39,5 @@
                 }
             });
         }
-
-        function eliminar() {
-            bootbox.dialog({
-                closeButton: true,
-                title: "¿Está seguro que desea eliminarlo del sistema?",
-                message: " ",
-                buttons: {
-                    success: {
-                        label: "Cancelar",
-                        className: "btn-default"
-                    },
-                    main: {
-                        label: "Eliminar",
-                        className: "btn-cancel",
-                        callback: function () {
-          
-                        }
-                    }
-                }
-            });
-        }
-
-        function agregar() {
-            bootbox.dialog({
-                closeButton: true,
-                title: " Se agregó exitosamente ",
-                message: " ",
-                buttons: {
-                    success: {
-                        label: "Aceptar",
-                        className: "btn-default"
-                    }
-                }
-            });
-        }
     </script>
 </asp:Content>
