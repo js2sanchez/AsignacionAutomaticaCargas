@@ -25,6 +25,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Administrador
         {
             cUsuarioNegocios Administrador= new cUsuarioNegocios(1, "A", 2, "B");
 
+            Administrador.Eliminado = 0;
             DataTable TablaAdministrador = Administrador.Buscar();
             
 
@@ -44,7 +45,14 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Administrador
                 cUsuarioNegocios Usuario = new cUsuarioNegocios(1, "A", 2, "B");
 
                 Usuario.IdUsuario = IdAdministrador;
-                Usuario.Eliminar();
+
+                DataTable TablaUsuario = Usuario.SeleccionarUno();
+
+                if (TablaUsuario.Rows.Count > 0)
+                {
+                    Usuario.Eliminado = 1;
+                    Usuario.Actualizar();
+                }
 
                 Response.Redirect("Consultar_Administrador.aspx");
             }
