@@ -23,11 +23,12 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
             cUsuarioNegocios Usuario = new cUsuarioNegocios(1, "A", 2, "B");
             Usuario.Login = txtUsuario.Text;
             Usuario.Contrasena = txtContrasena.Text;
-
             string DatosUsuario = Usuario.AutenticarUsuario();
+
             if (DatosUsuario != "")
             {
                 //Usuario Valido
+                Session["Login"] = Usuario.Login;
                 if (DatosUsuario.Equals("Administrador"))
                 {
                     Response.Redirect("/View/Menus/Menu_Administrador.aspx");
@@ -38,10 +39,12 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
             }
             else
             {
-                //Mostrar Error Usuario Invalido
-                Console.WriteLine("ERROR");
-            }
-                
+                //Usuario Invalido
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "usuarioInvalido();", true);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "eliminar();", true);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
+            }   
         }
+
     }
 }

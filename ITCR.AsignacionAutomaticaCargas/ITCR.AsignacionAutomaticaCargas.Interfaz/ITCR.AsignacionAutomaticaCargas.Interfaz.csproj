@@ -176,6 +176,7 @@
     <Content Include="Content\less\components\footer.css">
       <DependentUpon>footer.less</DependentUpon>
     </Content>
+    <None Include="Content\less\components\modal.less" />
     <Content Include="Content\less\general.css" />
     <Content Include="Content\less\general.min.css" />
     <Content Include="Content\less\pages\acerca-de.css">
@@ -250,6 +251,7 @@
     </Content>
     <Content Include="Content\less\components\data-grid-view.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
