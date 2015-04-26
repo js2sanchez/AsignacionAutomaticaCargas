@@ -48,6 +48,11 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
 
             if (e.CommandName == "Editar")
             {
+                string script = @"<script type='text/javascript'>
+                            finalizar();
+                            </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             }
         }
     }
