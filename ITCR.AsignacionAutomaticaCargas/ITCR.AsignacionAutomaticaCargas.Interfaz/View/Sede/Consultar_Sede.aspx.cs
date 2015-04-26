@@ -25,7 +25,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
         private void cargarTablaSedes()
         {
             cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
-
+            Sede.Eliminado = 0;
             DataTable TablaSedes = Sede.Buscar();
 
             if (TablaSedes.Rows.Count > 0)
@@ -42,8 +42,22 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
                 //IdSede = Int16.Parse(e.Item.Cells[0].Text);
                 //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "eliminar();", true);
 
-                string code = @"<script type='text/javascript'>eliminar(" + e.Item.ItemIndex + ");</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+               // string code = @"<script type='text/javascript'>eliminar(" + e.Item.ItemIndex + ");</script>";
+                //ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+
+                Int16 IdSede = Int16.Parse(e.Item.Cells[0].Text);
+
+                cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
+
+                Sede.IdSede = IdSede;
+                DataTable TablaSede = Sede.SeleccionarUno();
+                if (TablaSede.Rows.Count > 0)
+                {
+                    Sede.Eliminado = 1;
+                    Sede.Actualizar();
+                }
+
+                Response.Redirect("Consultar_Sede.aspx");
 
 
             }

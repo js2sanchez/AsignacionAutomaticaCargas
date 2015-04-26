@@ -22,7 +22,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Curso
         private void cargarTablaCursos()
         {
             cCursoNegocios Curso = new cCursoNegocios(1, "A", 2, "B");
-
+            Curso.Eliminado = 0;
             DataTable TablaCursos = Curso.Buscar();
 
             if (TablaCursos.Rows.Count > 0)
@@ -59,7 +59,14 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Curso
                 cCursoNegocios Curso = new cCursoNegocios(1, "A", 2, "B");
 
                 Curso.IdCurso = IdCurso;
-                Curso.Eliminar();
+                DataTable TablaCurso = Curso.SeleccionarUno();
+
+                if (TablaCurso.Rows.Count > 0)
+                {
+                    Curso.Eliminado = 1;
+                    Curso.Actualizar();
+                }                
+             
 
                 Response.Redirect("Consultar_Curso.aspx");
             }

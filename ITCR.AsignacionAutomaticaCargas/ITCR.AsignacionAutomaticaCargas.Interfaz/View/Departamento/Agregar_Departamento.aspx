@@ -7,16 +7,16 @@
                  <div class="container">
 		            <div class="row row-centered">
 		              <div class="col-xs-6 col-centered col-min">
-                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="40" placeholder="Código del departamento" ToolTip="Ejemplo: IC"></asp:TextBox>
+                          <asp:TextBox ID="txtCodigo" runat="server" class="form-control" maxlength="50" placeholder="Código del departamento" ToolTip="Ejemplo: IC"></asp:TextBox>
                           <asp:RequiredFieldValidator ID="rfvCodigo" runat="server" ControlToValidate="txtCodigo"
                               class="validation" ValidationGroup="vgRegistrarDepartamento">* Dato requerido</asp:RequiredFieldValidator>
                           <asp:RegularExpressionValidator ID="regCodigo" runat="server" ControlToValidate="txtCodigo"
-                                ValidationExpression="(([0-9A-Za-z]|-|_){2,30})"
+                                ValidationExpression="(([0-9A-Za-z]|-|_){2,50})"
                                 class="validation" ValidationGroup="vgRegistrarDepartamento">* Formato inválido</asp:RegularExpressionValidator>
                        </div>
                        
                         <div class="col-xs-6 col-centered col-min">
-                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="40" placeholder="Nombre del departamento" ToolTip="Ejemplo: Ingienería en Computación"></asp:TextBox>
+                         <asp:TextBox ID="txtNombre" runat="server" class="form-control" maxlength="50" placeholder="Nombre del departamento" ToolTip="Ejemplo: Ingienería en Computación"></asp:TextBox>
 		                   <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre"
                                 class="validation" ValidationGroup="vgRegistrarDepartamento">* Dato requerido</asp:RequiredFieldValidator>
 
