@@ -167,6 +167,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\main.min.css" />
     <Content Include="Content\images\._logo2.png" />
+    <Content Include="Content\images\consultar.png" />
     <Content Include="Content\images\editar.png" />
     <Content Include="Content\images\eliminar.png" />
     <Content Include="Content\images\header.jpg" />
@@ -291,6 +292,9 @@
     <Content Include="View\Menus\Menu_Administrator.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
+    <Content Include="View\Profesor\Consultar_DetalleProfesor.aspx" />
+    <Content Include="View\Profesor\Consultar_PerfilProfesor.aspx" />
+    <Content Include="View\Profesor\Consultar_Profesores.aspx" />
     <Content Include="View\Sede\Agregar_Sede.aspx" />
     <Content Include="View\Sede\Consultar_Sede.aspx" />
     <Content Include="Web.config" />
@@ -511,6 +515,27 @@
     </Compile>
     <Compile Include="View\Profesor\Agregar_Profesor.aspx.designer.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Profesor\Consultar_DetalleProfesor.aspx.cs">
+      <DependentUpon>Consultar_DetalleProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Profesor\Consultar_DetalleProfesor.aspx.designer.cs">
+      <DependentUpon>Consultar_DetalleProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Profesor\Consultar_PerfilProfesor.aspx.cs">
+      <DependentUpon>Consultar_PerfilProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Profesor\Consultar_PerfilProfesor.aspx.designer.cs">
+      <DependentUpon>Consultar_PerfilProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Profesor\Consultar_Profesores.aspx.cs">
+      <DependentUpon>Consultar_Profesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Profesor\Consultar_Profesores.aspx.designer.cs">
+      <DependentUpon>Consultar_Profesores.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Sede\Agregar_Sede.aspx.cs">
       <DependentUpon>Agregar_Sede.aspx</DependentUpon>

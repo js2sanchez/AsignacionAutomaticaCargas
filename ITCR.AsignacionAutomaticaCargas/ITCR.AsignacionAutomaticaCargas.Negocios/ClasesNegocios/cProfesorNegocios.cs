@@ -275,5 +275,17 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 				throw ex;
 			}
 		}
+
+        public DataTable BuscarTodos()
+        {
+            try
+            {
+                return base.BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 	} //class
 } //namespace

@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Contacto'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: jueves 23 de abril de 2015, 10:51:07 p.m.
+// Fecha: sábado 25 de abril de 2015, 11:03:35 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -48,12 +48,83 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
+		///		 <LI>IdContacto</LI>
 		///		 <LI>CodError</LI>
 		/// </UL>
 		/// </remarks>
 		public override bool Insertar()
 		{
 			return base.Insertar();
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update. Actualiza una fila existente en la base de datos.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdContacto</LI>
+		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
+		///		 <LI>Contacto</LI>
+		///		 <LI>Eliminado</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Actualizar()
+		{
+			return base.Actualizar();
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Eliminar. Borra una fila en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdContacto</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Eliminar()
+		{
+			return base.Eliminar();
+		}
+
+
+		/// <summary>
+		/// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdContacto</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		///		 <LI>IdContacto</LI>
+		///		 <LI>Fk_idtipoContacto</LI>
+		///		 <LI>Fk_idUsuario</LI>
+		///		 <LI>Contacto</LI>
+		///		 <LI>Eliminado</LI>
+		/// </UL>
+		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
+		/// </remarks>
+		public override DataTable SeleccionarUno()
+		{
+			return base.SeleccionarUno();
 		}
 
 
@@ -80,6 +151,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
+		///		 <LI>IdContacto</LI>
 		///		 <LI>Fk_idtipoContacto</LI>
 		///		 <LI>Fk_idUsuario</LI>
 		///		 <LI>Contacto</LI>
