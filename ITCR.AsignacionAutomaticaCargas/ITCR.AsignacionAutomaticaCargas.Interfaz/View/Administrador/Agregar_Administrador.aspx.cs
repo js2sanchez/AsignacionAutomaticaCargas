@@ -13,7 +13,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Administrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["PaginaActual"] = "Agregar_Administrador";
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)

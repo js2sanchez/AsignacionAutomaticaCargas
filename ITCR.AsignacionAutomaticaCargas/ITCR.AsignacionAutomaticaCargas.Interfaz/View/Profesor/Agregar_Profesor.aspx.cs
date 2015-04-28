@@ -15,6 +15,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor
         {
             if(!IsPostBack)
             {
+                //Session["PaginaActual"] = "Agregar_Profesor.aspx";
                 cargarDatos();
             }
         }

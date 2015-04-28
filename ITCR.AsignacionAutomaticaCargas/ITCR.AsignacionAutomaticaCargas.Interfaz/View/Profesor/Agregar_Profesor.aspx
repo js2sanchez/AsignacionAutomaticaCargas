@@ -71,7 +71,7 @@
                         <div class="col-xs-6 col-centered col-min">
                             <asp:TextBox ID="txtDireccion" runat="server" class="form-control" MaxLength="40" placeholder="*Dirección" ToolTip="Ejemplo: Cartago, Cartago Oriental, Los Ángeles,  500 metros Norte de la Basílica de los Ángeles"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion"
-                                ValidationExpression="([a-zA-ZÀ-ÿ0-9 ])*"
+                                ValidationExpression="([a-zA-ZÀ-ÿ0-9 ,])*"
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                         <div class="col-xs-6 col-centered col-min">
@@ -87,11 +87,17 @@
                             <asp:DropDownList ID="drpDepartamento" runat="server" class="form-control">
                                 <asp:ListItem Text="Departamento" Value="0" />
                             </asp:DropDownList>
+                            <asp:CompareValidator ID="cvDepartamento" runat="server" ValueToCompare="0"
+                                ControlToValidate="drpDepartamento"
+                                class="validation" Operator="NotEqual" ValidationGroup="vgRegistrarProfesor">* Seleccione una opción válida</asp:CompareValidator>
                         </div>
                         <div class="col-xs-6 col-centered col-min">
                             <asp:DropDownList ID="drpTipoJornada" runat="server" class="form-control">
                                 <asp:ListItem Text="Tipo de jornada" Value="0" />
                             </asp:DropDownList>
+                            <asp:CompareValidator ID="cvTipoJornada" runat="server" ValueToCompare="0"
+                                ControlToValidate="drpTipoJornada"
+                                class="validation" Operator="NotEqual" ValidationGroup="vgRegistrarProfesor">* Seleccione una opción válida</asp:CompareValidator>
                         </div>
                     </div>
                     <div class="row row-centered">
@@ -99,6 +105,9 @@
                             <asp:DropDownList ID="drpTipoProfesor" runat="server" class="form-control">
                                 <asp:ListItem Text="Tipo de profesor" Value="0" />
                             </asp:DropDownList>
+                            <asp:CompareValidator ID="cvTipoProfesor" runat="server" ValueToCompare="0"
+                                ControlToValidate="drpTipoProfesor"
+                                class="validation" Operator="NotEqual" ValidationGroup="vgRegistrarProfesor">* Seleccione una opción válida</asp:CompareValidator>
                         </div>
                         <div class="col-xs-6 col-centered col-min">
                         </div>
@@ -120,7 +129,7 @@
                         <div class="col-xs-6 col-centered col-min">
                             <asp:TextBox ID="txtFraseContraseña" runat="server" class="form-control" MaxLength="50" placeholder="*Frase para recordar contraseña" ToolTip="Ejemplo: Nombre de mi primera mascota"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="revFraseContraseña" runat="server" ControlToValidate="txtFraseContraseña"
-                                ValidationExpression="([a-zA-ZÀ-ÿ ])*"
+                                ValidationExpression="([0-9a-zA-ZÀ-ÿ ])*"
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                     </div>
@@ -151,7 +160,7 @@
                         <div class="col-xs-6 col-centered col-min">
                             <asp:TextBox ID="txtNotasAdicionales" runat="server" class="form-control" MaxLength="300" placeholder="Notas adicionales"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="revNotasAdicionales" runat="server" ControlToValidate="txtNotasAdicionales"
-                                ValidationExpression="([a-zA-ZÀ-ÿ ])*"
+                                ValidationExpression="([0-9a-zA-ZÀ-ÿ ])*"
                                 class="validation" ValidationGroup="vgRegistrarProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                         <div class="col-xs-6 col-centered col-min">
@@ -165,33 +174,33 @@
         </section>
     </div>
     <script type="text/javascript">
-         function agregar() {
-             bootbox.dialog({
-                 closeButton: false,
-                 title: " Se agregó exitosamente ",
-                 message: " ",
-                 buttons: {
-                     success: {
-                         label: "Aceptar",
-                         className: "btn-default",
-                         callback: function () {
+        function agregar() {
+            bootbox.dialog({
+                closeButton: false,
+                title: " Se agregó exitosamente ",
+                message: " ",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-default",
+                        callback: function () {
                             location.href = "/Default.aspx";
                         }
-                     }
-                 }
-             });
-             //Limpia los campos del form
-             $(".section-form").find('.form-control').val('');
-         }
-         function usuarioRegistradoAnteriormente() {
-             bootbox.dialog({
-                 closeButton: true,
-                 title: " El usuario ya existe, intente de nuevo. ",
-                 message: " ",
-                 buttons: {
-                  
-                 }
-             });
-         }
+                    }
+                }
+            });
+            //Limpia los campos del form
+            $(".section-form").find('.form-control').val('');
+        }
+        function usuarioRegistradoAnteriormente() {
+            bootbox.dialog({
+                closeButton: true,
+                title: " El usuario ya existe, intente de nuevo. ",
+                message: " ",
+                buttons: {
+
+                }
+            });
+        }
     </script>
 </asp:Content>

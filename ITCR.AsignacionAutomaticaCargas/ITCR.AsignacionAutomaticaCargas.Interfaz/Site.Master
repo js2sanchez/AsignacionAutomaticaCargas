@@ -11,15 +11,15 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/Content/css/main.min.css" rel="stylesheet" type="text/css"/> 
+    <link href="~/Content/css/main.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="default-background">
     <form runat="server">
         <asp:ScriptManager runat="server" EnablePageMethods="true"
-        ScriptMode="Release" LoadScriptsBeforeUI="true" >
+            ScriptMode="Release" LoadScriptsBeforeUI="true">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
@@ -43,31 +43,31 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <nav class="navbar navbar-default navbar-fixed-top navigation-bar" role="navigation">
-                    <div class="container">
-                        <div class="row">
-                            <div class="navbar-header">
-                                <a href="#" type="button" class="navbar-toggle collapsed menu-btn" data-toggle="collapse" data-target="#js-navigation-menu">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <a href="#" type="button" class="navbar-toggle collapsed menu-btn" data-toggle="collapse" data-target="#js-navigation-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="js-navigation-menu">
+                            <div class="pull-left pointer">
+                                <a href="/Default">
+                                    <img src="/Content/images/logo2.png" alt="">
                                 </a>
                             </div>
-
-                            <div class="collapse navbar-collapse" id="js-navigation-menu">
-					  	        <div class="pull-left pointer">
-                                    <a href="/Default">
-						                <img src="/Content/images/logo2.png" alt="">
-                                    </a>
-					  	        </div>
-                                <div class="nav nav-justified pull-right">
-						  	        <asp:Button ID="btnAcercaDe" runat="server" class="text-center" Text="Acerca de" OnClick="btnAcercaDe_Click" />
-                                    <asp:Button ID="btnInicio" runat="server" class="text-center" Text="Inicio" OnClick="btnInicio_Click"/>
-                                    <asp:Button ID="btnSalir" runat="server" class="text-center" Text="Salir"  OnClick="btnSalir_Click"/>
-                                </div>
+                            <div class="nav nav-justified pull-right">
+                                <asp:Button ID="btnAcercaDe" runat="server" class="text-center" Text="Acerca de" OnClick="btnAcercaDe_Click" />
+                                <asp:Button ID="btnInicio" runat="server" class="text-center" Text="Inicio" OnClick="btnInicio_Click" />
+                                <asp:Button ID="btnSalir" runat="server" class="text-center" Text="Salir" OnClick="btnSalir_Click" />
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
-        </form>
-    </body>
+                </div>
+            </nav>
+        </div>
+    </form>
+</body>
 </html>

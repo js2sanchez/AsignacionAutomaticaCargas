@@ -21,7 +21,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
                             "~/Scripts/WebForms/DetailsView.js",
                             "~/Scripts/WebForms/TreeView.js",
                             "~/Scripts/WebForms/WebParts.js",
-                             "~/Scripts/bootbox.min.js"
+                             "~/Scripts/bootbox.min.js",
+                              "~/Scripts/jquery-1.10.2.min"
                             ));
 
             // Order is very important for these files to work, they have explicit dependencies

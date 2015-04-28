@@ -60,11 +60,6 @@
                     <asp:Label ID="lblNotasAdicionales" runat="server" CssClass="lblForm" Text=""></asp:Label>
                 </div>
             </div>
-            <div class="row row-centered">
-                <div class="col-centered col-min">
-                    <asp:Button ID="btnRegresar" runat="server" class="btn btn-default" Text="Regresar" OnClick="btnRegresar_Click" />
-                </div>
-            </div>
         </section>
     </div>
 </asp:Content>

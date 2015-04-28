@@ -61,7 +61,7 @@
                         <div class="col-xs-6 col-centered col-min">
                             <asp:TextBox ID="txtFraseContraseña" runat="server" class="form-control" MaxLength="50" placeholder="*Frase para recordar contraseña" ToolTip="Ejemplo: Nombre de mi primera mascota"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="revFraseContraseña" runat="server" ControlToValidate="txtFraseContraseña"
-                                ValidationExpression="([a-zA-ZÀ-ÿ ])*"
+                                ValidationExpression="([0-9a-zA-ZÀ-ÿ ])*"
                                 class="validation" ValidationGroup="vgRegistrarAdministrador">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
                     </div>

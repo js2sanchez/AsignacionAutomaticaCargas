@@ -202,6 +202,15 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor {
         protected global::System.Web.UI.WebControls.DropDownList drpDepartamento;
         
         /// <summary>
+        /// cvDepartamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvDepartamento;
+        
+        /// <summary>
         /// drpTipoJornada control.
         /// </summary>
         /// <remarks>
@@ -211,6 +220,15 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor {
         protected global::System.Web.UI.WebControls.DropDownList drpTipoJornada;
         
         /// <summary>
+        /// cvTipoJornada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvTipoJornada;
+        
+        /// <summary>
         /// drpTipoProfesor control.
         /// </summary>
         /// <remarks>
@@ -218,6 +236,15 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drpTipoProfesor;
+        
+        /// <summary>
+        /// cvTipoProfesor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvTipoProfesor;
         
         /// <summary>
         /// txtUsuario control.

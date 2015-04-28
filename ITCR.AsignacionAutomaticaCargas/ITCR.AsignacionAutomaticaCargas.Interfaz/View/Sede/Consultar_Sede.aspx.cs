@@ -72,6 +72,16 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
             }
         }
 
+        [WebMethod]
+        public static void eliminarEstudio(int index)
+        {
+            System.Diagnostics.Debug.WriteLine("Eliminando sede");
+            cSedeNegocios Sede = new cSedeNegocios(1, "A", 2, "B");
+            Sede.IdSede = index;
+            Sede.Eliminar();
+        }
+
+        /*
         [WebMethod] 
         public static void eliminarConfirmacion(int index) {
            // if (IdSede != -1) {
@@ -80,6 +90,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Sede
                 Sede.Eliminar();
                 //Response.Redirect("Consultar_Sede.aspx");
             //s} 
-        }
+        }*/
     }
 }

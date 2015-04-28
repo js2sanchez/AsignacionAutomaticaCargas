@@ -15,7 +15,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack){
-            
+                Session["Login"] = "";
+                Session["PaginaActual"] = "~/Default.aspx";
             }
         }
 
@@ -44,7 +45,5 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "usuarioInvalido();", true);
             }   
         }
-
-
     }
 }

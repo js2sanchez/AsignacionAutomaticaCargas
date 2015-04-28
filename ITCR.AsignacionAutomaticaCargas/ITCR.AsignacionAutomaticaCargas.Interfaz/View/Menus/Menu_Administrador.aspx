@@ -52,7 +52,7 @@
 					<li class="col-md-4 col-sm-4">
 						<h3>Profesores</h3>
 						<a href="/View/Profesor/Consultar_Profesores.aspx">Consultar</a><br>
-						<a href="/View/Profesor/Agregar_Profesores.aspx"> Agregar</a>
+						<a href="/View/Profesor/Agregar_Profesor.aspx"> Agregar</a>
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Franjas horarias</h3>

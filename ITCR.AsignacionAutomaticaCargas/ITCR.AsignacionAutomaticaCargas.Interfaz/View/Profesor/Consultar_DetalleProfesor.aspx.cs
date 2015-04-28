@@ -173,11 +173,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Profesor
         }
 
         #endregion
-
-        protected void btnRegresar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Consultar_Profesores.aspx");
-        }
         
     }
 }
