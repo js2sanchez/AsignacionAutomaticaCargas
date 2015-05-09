@@ -58,15 +58,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Franja_Horaria {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator efHoraInicio;
         
         /// <summary>
-        /// regFranjaHoraria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regFranjaHoraria;
-        
-        /// <summary>
         /// txtHoraFinal control.
         /// </summary>
         /// <remarks>
@@ -85,15 +76,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Franja_Horaria {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfHoraFinal;
         
         /// <summary>
-        /// regHoraFinal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regHoraFinal;
-        
-        /// <summary>
         /// cbLunes control.
         /// </summary>
         /// <remarks>
@@ -110,6 +92,42 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Franja_Horaria {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbMartes;
+        
+        /// <summary>
+        /// cbMiercoles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbMiercoles;
+        
+        /// <summary>
+        /// cbJueves control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbJueves;
+        
+        /// <summary>
+        /// cbViernes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbViernes;
+        
+        /// <summary>
+        /// cbSabado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbSabado;
         
         /// <summary>
         /// btnAgregar control.
