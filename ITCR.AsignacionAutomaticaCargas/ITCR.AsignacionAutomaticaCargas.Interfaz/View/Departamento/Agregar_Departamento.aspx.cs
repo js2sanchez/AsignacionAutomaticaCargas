@@ -33,5 +33,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Departamento
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
             }
         }
+
+     
     }
 }
