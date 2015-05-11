@@ -34,7 +34,8 @@
                                 ValidationExpression="[0-9]{2,3}\.?[0-9]{2}"
                                 class="validation" ValidationGroup="vgRegistrarEvaluacionProfesor">* Formato inválido</asp:RegularExpressionValidator>
                         </div>
-
+                        <div class="col-xs-6 col-centered col-min">
+                        </div>
                     </div>
                     <div class="row row-centered" style="margin-top: 20px;">
                         <asp:Button ID="btnAgregar" runat="server" class="btn btn-default" Text="Agregar" OnClick="btnAgregar_Click" />
