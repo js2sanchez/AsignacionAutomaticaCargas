@@ -293,7 +293,10 @@
     <Content Include="View\Curso\Consultar_Curso.aspx" />
     <Content Include="View\Departamento\Agregar_Departamento.aspx" />
     <Content Include="View\Departamento\Consultar_Departamento.aspx" />
-    <Content Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx" />
+    <Content Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx" />
+    <Content Include="View\Evaluacion\Registrar_Evaluacion_Profesor.aspx" />
+    <Content Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx" />
+    <Content Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx" />
     <Content Include="View\Menus\Menu_Administrador.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Periodo\Agregar_Periodo.aspx" />
@@ -516,12 +519,31 @@
     <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
       <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx.cs">
-      <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+    <Compile Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx.cs">
+      <DependentUpon>Consultar_Evaluacion_Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx.designer.cs">
+    <Compile Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx.designer.cs">
+      <DependentUpon>Consultar_Evaluacion_Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Evaluacion\Registrar_Evaluacion_Profesor.aspx.cs">
+      <DependentUpon>Registrar_Evaluacion_Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Evaluacion\Registrar_Evaluacion_Profesor.aspx.designer.cs">
+      <DependentUpon>Registrar_Evaluacion_Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx.cs">
       <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx.designer.cs">
+      <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx.cs">
+      <DependentUpon>Consultar_Franja_Horaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx.designer.cs">
+      <DependentUpon>Consultar_Franja_Horaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Menus\Menu_Administrador.aspx.cs">
       <DependentUpon>Menu_Administrador.aspx</DependentUpon>

@@ -33,8 +33,8 @@ insert into DB_AsignacionCargas.dbo.TipoContacto (tipoContacto) values ('Celular
 select * from DB_AsignacionCargas.dbo.TipoContacto;
 
 -- Modalidad
-insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Sem', 'Semestral',0);
-insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Bi', 'Bimestral',0);
-insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('A', 'Anual',0);
-insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Tri', 'Trimestral',0);
+insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Sem', 'Semestre',0);
+insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Bi', 'Bimestre',0);
+insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('A', 'Año',0);
+insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Tri', 'Trimeste',0);
 select * from DB_AsignacionCargas.dbo.modalidad;

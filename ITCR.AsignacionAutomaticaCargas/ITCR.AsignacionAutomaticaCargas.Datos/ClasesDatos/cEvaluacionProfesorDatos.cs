@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'EvaluacionProfesor'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: domingo 10 de mayo de 2015, 06:27:49 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -173,5 +173,21 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 				//    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
 			return base.Buscar();
 		}
+
+        public DataTable BuscarTodos()
+        {
+            //TODO: agregar % para busqueda de campos string (varchar, etc.) con LIKE (el procedimiento ya lo hace), así:
+            //if (!base.DescripcionCF.IsNull) {
+            //    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
+            return base.BuscarTodos();
+        }
+
+        public DataTable BuscarUno(String Cedula)
+        {
+            //TODO: agregar % para busqueda de campos string (varchar, etc.) con LIKE (el procedimiento ya lo hace), así:
+            //if (!base.DescripcionCF.IsNull) {
+            //    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
+            return base.BuscarUno(Cedula);
+        }
 	} //class
 } //namespace
