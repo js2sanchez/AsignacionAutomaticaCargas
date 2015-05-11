@@ -1240,6 +1240,78 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			}
 		}
 
+        public override DataTable SeleccionarUno()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_Grupo_Buscar"; 
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+            DataTable toReturn = new DataTable("Grupo");
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iidGrupo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idGrupo));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                adapter.Fill(toReturn);
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento Almacenado 'pr_Periodo_SeleccionarUno' reportó el error Código: " + _codError);
+                }
+
+                if (toReturn.Rows.Count > 0)
+                {
+                    _idGrupo = (Int32)toReturn.Rows[0]["idGrupo"];
+                    _numeroGrupo = (Int32)toReturn.Rows[0]["numeroGrupo"];
+                    _fk_idCurso = (Int32)toReturn.Rows[0]["fk_idCurso"];
+                    _fk_idFranjaHoraria= (Int32)toReturn.Rows[0]["fk_idFranjaHoraria"];
+                    _fk_idProfesor = (Int32)toReturn.Rows[0]["fk_idProfesor"];
+                    _fk_idSede = (Int32)toReturn.Rows[0]["fk_idSede"];
+                    _fk_idPeriodo = (Int32)toReturn.Rows[0]["fk_idPeriodo"];
+                    _fk_idDepartamento = (Int32)toReturn.Rows[0]["fk_idDepartamento"];
+                    _estado = (Int32)toReturn.Rows[0]["estado"];
+                    _eliminado = toReturn.Rows[0]["eliminado"] == System.DBNull.Value ? SqlInt16.Null : (Int16)toReturn.Rows[0]["eliminado"];
+                }
+                return toReturn;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cGrupoBase::SeleccionarUno::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+                adapter.Dispose();
+            }
+        }
+
+
 
 		#region Declaraciones de propiedades de la clase
 		public SqlInt32 IdGrupo

@@ -293,7 +293,10 @@
     <Content Include="View\Curso\Consultar_Curso.aspx" />
     <Content Include="View\Departamento\Agregar_Departamento.aspx" />
     <Content Include="View\Departamento\Consultar_Departamento.aspx" />
-    <Content Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx" />
+    <Content Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx" />
+    <Content Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx" />
+    <Content Include="View\Grupo\Agregar_Grupo.aspx" />
+    <Content Include="View\Grupo\Consultar_Grupo.aspx" />
     <Content Include="View\Menus\Menu_Administrador.aspx" />
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Periodo\Agregar_Periodo.aspx" />
@@ -516,12 +519,33 @@
     <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
       <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx.cs">
+    <Compile Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx.cs">
       <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Franja Horaria\Agregar_FranjaHoraria.aspx.designer.cs">
+    <Compile Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx.designer.cs">
       <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx.cs">
+      <DependentUpon>Consultar_Franja_Horaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx.designer.cs">
+      <DependentUpon>Consultar_Franja_Horaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Grupo\Agregar_Grupo.aspx.cs">
+      <DependentUpon>Agregar_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Grupo\Agregar_Grupo.aspx.designer.cs">
+      <DependentUpon>Agregar_Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Grupo\Consultar_Grupo.aspx.cs">
+      <DependentUpon>Consultar_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Grupo\Consultar_Grupo.aspx.designer.cs">
+      <DependentUpon>Consultar_Grupo.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Menus\Menu_Administrador.aspx.cs">
       <DependentUpon>Menu_Administrador.aspx</DependentUpon>

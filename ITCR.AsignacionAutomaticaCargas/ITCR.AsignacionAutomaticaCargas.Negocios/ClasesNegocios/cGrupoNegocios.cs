@@ -153,5 +153,18 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 				throw ex;
 			}
 		}
+
+        public override DataTable SeleccionarUno()
+        {
+            try
+            {
+                return base.SeleccionarUno();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 	} //class
 } //namespace

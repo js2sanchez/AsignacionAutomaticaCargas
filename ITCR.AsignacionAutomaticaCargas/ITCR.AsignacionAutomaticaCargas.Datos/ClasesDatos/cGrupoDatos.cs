@@ -109,5 +109,12 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 				//    base.DescripcionCF = "{0}" + base.DescripcionCF + "{0}"; }
 			return base.Buscar();
 		}
+
+        public override DataTable SeleccionarUno()
+        {
+            return base.SeleccionarUno();
+        }
+
+
 	} //class
 } //namespace

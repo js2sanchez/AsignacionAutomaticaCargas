@@ -27,8 +27,8 @@
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Grupos</h3>
-						<a href="#"> Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="~/View/Grupo/Consultar_Grupo.aspx"> Consultar</a><br>
+						<a href="/View/Grupo/Agregar_Grupo.aspx"> Agregar</a>
 					</li>
 				</ul>
 				<ul class="row list-unstyled">
@@ -56,8 +56,8 @@
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Franjas horarias</h3>
-						<a href="#">Consultar</a><br>
-						<a href="#"> Agregar</a>
+						<a href="/View/Franja_Horaria/Consultar_Franja_Horaria.aspx">Consultar</a><br>
+						<a href="/View/Franja_Horaria/Agregar_FranjaHoraria.aspx"> Agregar</a>
 					</li>
 					<li class="col-md-4 col-sm-4">
 						<h3>Procesos</h3>
