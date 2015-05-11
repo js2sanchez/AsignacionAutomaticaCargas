@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu_Administrador.aspx.cs" Inherits="ITCR.AsignacionAutomaticaCargas.Interfaz.Views.Administrator.Administrator" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="adminpage">
         <section class="hero-container">
             <figure class="hero-figure">
@@ -78,6 +77,7 @@
                     </li>
                 </ul>
             </div>
+
         </section>
         <section class="footer">
             <div class="col-xs-10 col-md-7 col-center text-center">
