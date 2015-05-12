@@ -24,10 +24,12 @@
                         </div>
                         </div>
                       <div class="row row-centered">                
-                               <div class="col-xs-6 col-centered col-min">
+                        <div class="col-xs-6 col-centered col-min">
                             <asp:DropDownList ID="drpModalidad" runat="server" class="form-control">
                                 <asp:ListItem Text="Modalidad" Value="0" />
                             </asp:DropDownList>
+                         </div>
+                         <div class="col-xs-6 col-centered col-min">
                          </div>
                     </div>
                 </div>
