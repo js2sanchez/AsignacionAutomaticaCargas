@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'DiasFranja'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: lunes 11 de mayo de 2015, 09:40:53 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -55,6 +55,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
+		///		 <LI>IdDiasFranja</LI>
 		///		 <LI>CodError</LI>
 		/// </UL>
 		/// </remarks>
@@ -76,6 +77,113 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Insertar cDiasFranja;"+ex.Message;
 				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				throw ex;
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update. Actualiza una fila existente en la base de datos.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdDiasFranja</LI>
+		///		 <LI>Fk_idFranjaHoraria</LI>
+		///		 <LI>Dia</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Actualizar()
+		{
+			string operacion;
+			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
+			try
+			{
+				//Construir aqui el string a guardar en la bitacora.
+				operacion = "Actualizar cDiasFranja;"
+					+"IdDiasFranja:"+IdDiasFranja.ToString()+";"
+					+"Fk_idFranjaHoraria:"+Fk_idFranjaHoraria.ToString()+";"
+					+"Dia:"+Dia.ToString()+";";
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+				return base.Actualizar();
+			}
+			catch (Exception ex)
+			{
+				//Construir el string a guardar en la bitácora en caso de error.
+				operacion = "Error Actualizar cDiasFranja;"+ex.Message;
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				throw ex;
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Eliminar de lógica de negocios. Borra una fila en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdDiasFranja</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Eliminar()
+		{
+			string operacion;
+			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
+			try
+			{
+				//Construir aqui el string a guardar en la bitacora.
+				operacion = "Eliminar cDiasFranja;"
+					+"IdDiasFranja:"+IdDiasFranja.ToString()+";";
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+				return base.Eliminar();
+			}
+			catch (Exception ex)
+			{
+				//Construir el string a guardar en la bitácora en caso de error.
+				operacion = "Error Eliminar cDiasFranja;"+ex.Message;
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				throw ex;
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdDiasFranja</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		///		 <LI>IdDiasFranja</LI>
+		///		 <LI>Fk_idFranjaHoraria</LI>
+		///		 <LI>Dia</LI>
+		/// </UL>
+		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
+		/// </remarks>
+		public override DataTable SeleccionarUno()
+		{
+			try
+			{
+				return base.SeleccionarUno();
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -111,6 +219,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
+		///		 <LI>IdDiasFranja</LI>
 		///		 <LI>Fk_idFranjaHoraria</LI>
 		///		 <LI>Dia</LI>
 		/// </UL>

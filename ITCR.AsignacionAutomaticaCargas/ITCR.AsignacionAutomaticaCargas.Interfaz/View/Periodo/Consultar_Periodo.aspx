@@ -8,7 +8,7 @@
                 <HeaderStyle Font-Size="Larger" ForeColor="Black" HorizontalAlign="Center" />
                 <Columns>
                     <asp:BoundColumn DataField="idPeriodo" HeaderText="idCurso" Visible="False"></asp:BoundColumn>
-                    <asp:BoundColumn DataField="numeroPeriodo" HeaderText="Código"></asp:BoundColumn> 
+                    <asp:BoundColumn DataField="numeroPeriodo" HeaderText="Número"></asp:BoundColumn> 
                      <asp:BoundColumn DataField="fk_idModalidad" HeaderText="Modalidad"></asp:BoundColumn>                  
                     <asp:BoundColumn DataField="anyo" HeaderText="Nombre"></asp:BoundColumn>
 

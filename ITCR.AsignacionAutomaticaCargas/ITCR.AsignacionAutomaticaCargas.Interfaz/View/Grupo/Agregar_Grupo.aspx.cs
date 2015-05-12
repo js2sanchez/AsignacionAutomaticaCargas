@@ -115,7 +115,25 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Grupo
 
             for (int i = 0; i < TablaHorario.Rows.Count; i++)
             {
-                ListItem ItemHorario = new ListItem(TablaHorario.Rows[i]["horaInicio"].ToString() +" - " + TablaHorario.Rows[i]["horaFinal"].ToString(), TablaHorario.Rows[i]["idFranjaHoraria"].ToString());
+                Int16 IdFranjaHoraria = Int16.Parse(TablaHorario.Rows[i]["idFranjaHoraria"].ToString());
+
+                cDiasFranjaNegocios DiasFranja = new cDiasFranjaNegocios(1, "A", 2, "B");
+                DiasFranja.Fk_idFranjaHoraria = IdFranjaHoraria;
+                DataTable TablaDiasFranja = DiasFranja.Buscar();
+
+                String Dias = "";
+                
+                if (TablaDiasFranja.Rows.Count > 0)
+                {
+                    Dias = TablaDiasFranja.Rows[0]["dia"].ToString();
+                }
+
+                for (int j = 1; j < TablaDiasFranja.Rows.Count; j++)
+                {
+                    Dias = Dias + "," + TablaDiasFranja.Rows[j]["dia"].ToString();
+                }
+
+                ListItem ItemHorario = new ListItem(Dias + " " + TablaHorario.Rows[i]["horaInicio"].ToString() +" - " + TablaHorario.Rows[i]["horaFinal"].ToString(), TablaHorario.Rows[i]["idFranjaHoraria"].ToString());
                 drpHorario.Items.Add(ItemHorario);
             }
         }

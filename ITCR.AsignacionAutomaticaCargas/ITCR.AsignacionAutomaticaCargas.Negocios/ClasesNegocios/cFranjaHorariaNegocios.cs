@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'franjaHoraria'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: lunes 11 de mayo de 2015, 09:40:53 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -50,7 +50,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -69,7 +68,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 			{
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Insertar cFranjaHoraria;"
-					+"CodigoFranja:"+CodigoFranja.ToString()+";"
 					+"HoraInicio:"+HoraInicio.ToString()+";"
 					+"HoraFinal:"+HoraFinal.ToString()+";"
 					+"Eliminado:"+Eliminado.ToString()+";";
@@ -94,7 +92,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -113,7 +110,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Actualizar cFranjaHoraria;"
 					+"IdFranjaHoraria:"+IdFranjaHoraria.ToString()+";"
-					+"CodigoFranja:"+CodigoFranja.ToString()+";"
 					+"HoraInicio:"+HoraInicio.ToString()+";"
 					+"HoraFinal:"+HoraFinal.ToString()+";"
 					+"Eliminado:"+Eliminado.ToString()+";";
@@ -179,7 +175,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <UL>
 		///		 <LI>CodError</LI>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -230,7 +225,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>

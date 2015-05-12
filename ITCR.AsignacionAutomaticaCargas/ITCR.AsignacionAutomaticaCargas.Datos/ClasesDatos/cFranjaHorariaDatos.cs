@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'franjaHoraria'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: lunes 11 de mayo de 2015, 09:40:53 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -41,7 +41,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -66,7 +65,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -115,7 +113,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// <UL>
 		///		 <LI>CodError</LI>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -152,7 +149,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Datos
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>

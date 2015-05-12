@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'Grupo'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: lunes 11 de mayo de 2015, 10:20:52 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -114,6 +114,614 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			{
 				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
 				throw new Exception("cGrupoBase::Insertar::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update. Actualiza una fila existente en la base de datos.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdGrupo</LI>
+		///		 <LI>Fk_idCurso</LI>
+		///		 <LI>Fk_idFranjaHoraria</LI>
+		///		 <LI>Fk_idProfesor. May be SqlInt32.Null</LI>
+		///		 <LI>Fk_idSede</LI>
+		///		 <LI>Fk_idPeriodo</LI>
+		///		 <LI>NumeroGrupo</LI>
+		///		 <LI>Fk_idDepartamento</LI>
+		///		 <LI>Estado. May be SqlInt32.Null</LI>
+		///		 <LI>Eliminado</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Actualizar()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_Actualizar]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidGrupo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idGrupo));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idCurso", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idCurso));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idFranjaHoraria", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idFranjaHoraria));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesor", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesor));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idSede", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idSede));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idPeriodo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idPeriodo));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@inumeroGrupo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _numeroGrupo));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamento", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamento));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iestado", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _estado));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento Almacenado 'pr_Grupo_Actualizar' reportó el error Codigo: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::Actualizar::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'fk_idCurso.
+		/// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'fk_idCurso' en
+		/// todas las filas que tienen ese valor para este campo con el valor 'Fk_idCursoanterior 
+		/// con el valor colocado en la propiedad 'Fk_idCurso'.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idCurso</LI>
+		///		 <LI>Fk_idCursoOld</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool ActualizarTodos_Con_fk_idCurso_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_ActualizarTodos_Con_fk_idCurso_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idCurso", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idCurso));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idCursoOld", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idCursoOld));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Grupo_ActualizarTodos_Con_fk_idCurso_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::ActualizarTodos_Con_fk_idCurso_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'fk_idFranjaHoraria.
+		/// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'fk_idFranjaHoraria' en
+		/// todas las filas que tienen ese valor para este campo con el valor 'Fk_idFranjaHorariaanterior 
+		/// con el valor colocado en la propiedad 'Fk_idFranjaHoraria'.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idFranjaHoraria</LI>
+		///		 <LI>Fk_idFranjaHorariaOld</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool ActualizarTodos_Con_fk_idFranjaHoraria_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_ActualizarTodos_Con_fk_idFranjaHoraria_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idFranjaHoraria", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idFranjaHoraria));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idFranjaHorariaOld", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idFranjaHorariaOld));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Grupo_ActualizarTodos_Con_fk_idFranjaHoraria_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::ActualizarTodos_Con_fk_idFranjaHoraria_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'fk_idProfesor.
+		/// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'fk_idProfesor' en
+		/// todas las filas que tienen ese valor para este campo con el valor 'Fk_idProfesoranterior 
+		/// con el valor colocado en la propiedad 'Fk_idProfesor'.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idProfesor. May be SqlInt32.Null</LI>
+		///		 <LI>Fk_idProfesorOld. May be SqlInt32.Null</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool ActualizarTodos_Con_fk_idProfesor_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_ActualizarTodos_Con_fk_idProfesor_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesor", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesor));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idProfesorOld", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fk_idProfesorOld));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Grupo_ActualizarTodos_Con_fk_idProfesor_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::ActualizarTodos_Con_fk_idProfesor_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'fk_idSede.
+		/// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'fk_idSede' en
+		/// todas las filas que tienen ese valor para este campo con el valor 'Fk_idSedeanterior 
+		/// con el valor colocado en la propiedad 'Fk_idSede'.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idSede</LI>
+		///		 <LI>Fk_idSedeOld</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool ActualizarTodos_Con_fk_idSede_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_ActualizarTodos_Con_fk_idSede_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idSede", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idSede));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idSedeOld", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idSedeOld));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Grupo_ActualizarTodos_Con_fk_idSede_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::ActualizarTodos_Con_fk_idSede_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'fk_idPeriodo.
+		/// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'fk_idPeriodo' en
+		/// todas las filas que tienen ese valor para este campo con el valor 'Fk_idPeriodoanterior 
+		/// con el valor colocado en la propiedad 'Fk_idPeriodo'.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idPeriodo</LI>
+		///		 <LI>Fk_idPeriodoOld</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool ActualizarTodos_Con_fk_idPeriodo_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_ActualizarTodos_Con_fk_idPeriodo_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idPeriodo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idPeriodo));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idPeriodoOld", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idPeriodoOld));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Grupo_ActualizarTodos_Con_fk_idPeriodo_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::ActualizarTodos_Con_fk_idPeriodo_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'fk_idDepartamento.
+		/// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'fk_idDepartamento' en
+		/// todas las filas que tienen ese valor para este campo con el valor 'Fk_idDepartamentoanterior 
+		/// con el valor colocado en la propiedad 'Fk_idDepartamento'.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>Fk_idDepartamento</LI>
+		///		 <LI>Fk_idDepartamentoOld</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public bool ActualizarTodos_Con_fk_idDepartamento_FK()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_ActualizarTodos_Con_fk_idDepartamento_FK]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamento", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamento));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@ifk_idDepartamentoOld", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fk_idDepartamentoOld));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento almacenado 'pr_Grupo_ActualizarTodos_Con_fk_idDepartamento_FK' reportó el error Código: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::ActualizarTodos_Con_fk_idDepartamento_FK::Ocurrió un error." + ex.Message, ex);
+			}
+			finally
+			{
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Cierra la conexión.
+					_conexionBD.Close();
+				}
+				cmdAEjecutar.Dispose();
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Eliminar. Borra una fila en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdGrupo</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Eliminar()
+		{
+			SqlCommand	cmdAEjecutar = new SqlCommand();
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_Eliminar]";
+			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+			// Usar el objeto conexión de la clase base
+			cmdAEjecutar.Connection = _conexionBD;
+
+			try
+			{
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidGrupo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idGrupo));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+				if(_conexionBDEsCreadaLocal)
+				{
+					// Abre una conexión.
+					_conexionBD.Open();
+				}
+				else
+				{
+					if(_conexionBDProvider.IsTransactionPending)
+					{
+						cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+					}
+				}
+
+				// Ejecuta la consulta.
+				_filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+				_codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+				if(_codError != (int)ITCRError.AllOk)
+				{
+					// Genera un error.
+					throw new Exception("Procedimiento Almacenado 'pr_Grupo_Eliminar' reportó el error Codigo: " + _codError);
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::Eliminar::Ocurrió un error." + ex.Message, ex);
 			}
 			finally
 			{
@@ -548,7 +1156,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 
 		/// <summary>
-		/// Propósito: Método SELECT para un único campo. Este método hace Select de una fila de la base de datos, basado en  un único campo 'idGrupo'
+		/// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
 		/// </summary>
 		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
 		/// <remarks>
@@ -572,10 +1180,10 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
-		public DataTable SeleccionarUno_Con_idGrupo_FK()
+		public override DataTable SeleccionarUno()
 		{
 			SqlCommand	cmdAEjecutar = new SqlCommand();
-			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_SeleccionarUno_Con_idGrupo_FK]";
+			cmdAEjecutar.CommandText = "dbo.[pr_Grupo_SeleccionarUno]";
 			cmdAEjecutar.CommandType = CommandType.StoredProcedure;
 			DataTable toReturn = new DataTable("Grupo");
 			SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
@@ -608,7 +1216,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				if(_codError != (int)ITCRError.AllOk)
 				{
 					// Genera un error.
-					throw new Exception("Procedimiento Almacenado 'pr_Grupo_SeleccionarUno_Con_idGrupo_FK' reportó el error Código: " + _codError);
+					throw new Exception("Procedimiento Almacenado 'pr_Grupo_SeleccionarUno' reportó el error Código: " + _codError);
 				}
 
 				if(toReturn.Rows.Count > 0)
@@ -626,10 +1234,10 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				}
 				return toReturn;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
-				// Ocurrió un error. Le hace Bubble a quien llama y encapsula el objeto Exception
-				throw new Exception("cGrupoBase::SeleccionarUno_Con_idGrupo_FK::Ocurrió un error." + ex.Message, ex);
+				// Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+				throw new Exception("cGrupoBase::SeleccionarUno::Ocurrió un error." + ex.Message, ex);
 			}
 			finally
 			{
@@ -1239,78 +1847,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				adapter.Dispose();
 			}
 		}
-
-        public override DataTable SeleccionarUno()
-        {
-            SqlCommand cmdAEjecutar = new SqlCommand();
-            cmdAEjecutar.CommandText = "dbo.[pr_Grupo_Buscar"; 
-            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
-            DataTable toReturn = new DataTable("Grupo");
-            SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
-
-            // Usar el objeto conexión de la clase base
-            cmdAEjecutar.Connection = _conexionBD;
-
-            try
-            {
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iidGrupo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idGrupo));
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
-
-                if (_conexionBDEsCreadaLocal)
-                {
-                    // Abre una conexión.
-                    _conexionBD.Open();
-                }
-                else
-                {
-                    if (_conexionBDProvider.IsTransactionPending)
-                    {
-                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
-                    }
-                }
-
-                // Ejecuta la consulta.
-                adapter.Fill(toReturn);
-                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
-
-                if (_codError != (int)ITCRError.AllOk)
-                {
-                    // Genera un error.
-                    throw new Exception("Procedimiento Almacenado 'pr_Periodo_SeleccionarUno' reportó el error Código: " + _codError);
-                }
-
-                if (toReturn.Rows.Count > 0)
-                {
-                    _idGrupo = (Int32)toReturn.Rows[0]["idGrupo"];
-                    _numeroGrupo = (Int32)toReturn.Rows[0]["numeroGrupo"];
-                    _fk_idCurso = (Int32)toReturn.Rows[0]["fk_idCurso"];
-                    _fk_idFranjaHoraria= (Int32)toReturn.Rows[0]["fk_idFranjaHoraria"];
-                    _fk_idProfesor = (Int32)toReturn.Rows[0]["fk_idProfesor"];
-                    _fk_idSede = (Int32)toReturn.Rows[0]["fk_idSede"];
-                    _fk_idPeriodo = (Int32)toReturn.Rows[0]["fk_idPeriodo"];
-                    _fk_idDepartamento = (Int32)toReturn.Rows[0]["fk_idDepartamento"];
-                    _estado = (Int32)toReturn.Rows[0]["estado"];
-                    _eliminado = toReturn.Rows[0]["eliminado"] == System.DBNull.Value ? SqlInt16.Null : (Int16)toReturn.Rows[0]["eliminado"];
-                }
-                return toReturn;
-            }
-            catch (Exception ex)
-            {
-                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
-                throw new Exception("cGrupoBase::SeleccionarUno::Ocurrió un error." + ex.Message, ex);
-            }
-            finally
-            {
-                if (_conexionBDEsCreadaLocal)
-                {
-                    // Cierra la conexión.
-                    _conexionBD.Close();
-                }
-                cmdAEjecutar.Dispose();
-                adapter.Dispose();
-            }
-        }
-
 
 
 		#region Declaraciones de propiedades de la clase

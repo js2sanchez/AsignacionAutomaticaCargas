@@ -63,9 +63,27 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Grupo
             DataTable Tabla = Horario.Buscar();
             string Nombre = "";
 
+            Int16 IdFranjaHoraria = Int16.Parse(pId.ToString());
+
+            cDiasFranjaNegocios DiasFranja = new cDiasFranjaNegocios(1, "A", 2, "B");
+            DiasFranja.Fk_idFranjaHoraria = IdFranjaHoraria;
+            DataTable TablaDiasFranja = DiasFranja.Buscar();
+
+            String Dias = "";
+
+            if (TablaDiasFranja.Rows.Count > 0)
+            {
+                Dias = TablaDiasFranja.Rows[0]["dia"].ToString();
+            }
+
+            for (int j = 1; j < TablaDiasFranja.Rows.Count; j++)
+            {
+                Dias = Dias + "," + TablaDiasFranja.Rows[j]["dia"].ToString();
+            }
+
             if (Tabla.Rows.Count > 0)
             {
-                Nombre = Tabla.Rows[0]["horaInicio"].ToString() + ":" + Tabla.Rows[0]["horaFinal"].ToString();
+                Nombre = Dias + " " + Tabla.Rows[0]["horaInicio"].ToString() + "-" + Tabla.Rows[0]["horaFinal"].ToString();
             }
 
             return Nombre;

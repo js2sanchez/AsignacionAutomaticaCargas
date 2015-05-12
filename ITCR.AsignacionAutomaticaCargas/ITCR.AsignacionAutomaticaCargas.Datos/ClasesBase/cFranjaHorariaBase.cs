@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de acceso a datos para tabla 'franjaHoraria'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:29 p.m.
+// Fecha: lunes 11 de mayo de 2015, 09:40:53 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -24,7 +24,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 	public class cFranjaHorariaBase : cBDInteraccionBase
 	{
 		#region Declaraciones de miembros de la clase
-			private SqlInt32		_codigoFranja, _idFranjaHoraria;
+			private SqlInt32		_idFranjaHoraria;
 			private SqlInt16		_eliminado;
 			private SqlDateTime		_horaInicio, _horaFinal;
 		#endregion
@@ -46,7 +46,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -68,9 +67,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 
 			try
 			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@icodigoFranja", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _codigoFranja));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraInicio", SqlDbType.DateTime, 5, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaInicio));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraFinal", SqlDbType.DateTime, 5, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaFinal));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraInicio", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaInicio));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraFinal", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaFinal));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidFranjaHoraria", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _idFranjaHoraria));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
@@ -126,7 +124,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -148,9 +145,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			try
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidFranjaHoraria", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idFranjaHoraria));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@icodigoFranja", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _codigoFranja));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraInicio", SqlDbType.DateTime, 5, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaInicio));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraFinal", SqlDbType.DateTime, 5, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaFinal));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraInicio", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaInicio));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraFinal", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaFinal));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
@@ -279,7 +275,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// <UL>
 		///		 <LI>CodError</LI>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -328,7 +323,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 				if(toReturn.Rows.Count > 0)
 				{
 					_idFranjaHoraria = (Int32)toReturn.Rows[0]["idFranjaHoraria"];
-					_codigoFranja = (Int32)toReturn.Rows[0]["codigoFranja"];
 					_horaInicio = (DateTime)toReturn.Rows[0]["horaInicio"];
 					_horaFinal = (DateTime)toReturn.Rows[0]["horaFinal"];
 					_eliminado = (Int16)toReturn.Rows[0]["eliminado"];
@@ -429,7 +423,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>IdFranjaHoraria</LI>
-		///		 <LI>CodigoFranja</LI>
 		///		 <LI>HoraInicio</LI>
 		///		 <LI>HoraFinal</LI>
 		///		 <LI>Eliminado</LI>
@@ -453,9 +446,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 			try
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iidFranjaHoraria", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _idFranjaHoraria));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@icodigoFranja", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _codigoFranja));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraInicio", SqlDbType.DateTime, 5, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaInicio));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraFinal", SqlDbType.DateTime, 5, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaFinal));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraInicio", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaInicio));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@tihoraFinal", SqlDbType.DateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _horaFinal));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sieliminado", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 5, 0, "", DataRowVersion.Proposed, _eliminado));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
@@ -517,24 +509,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Base
 					throw new ArgumentOutOfRangeException("IdFranjaHoraria", "IdFranjaHoraria can't be NULL");
 				}
 				_idFranjaHoraria = value;
-			}
-		}
-
-
-		public SqlInt32 CodigoFranja
-		{
-			get
-			{
-				return _codigoFranja;
-			}
-			set
-			{
-				SqlInt32 codigoFranjaTmp = (SqlInt32)value;
-				if(codigoFranjaTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("CodigoFranja", "CodigoFranja can't be NULL");
-				}
-				_codigoFranja = value;
 			}
 		}
 

@@ -24,7 +24,7 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Franja_Horaria
             if (Page.IsValid)
             {
                 cFranjaHorariaNegocios FranjaHoraria = new cFranjaHorariaNegocios(1, "A", 2, "B");
-                FranjaHoraria.CodigoFranja = Int32.Parse(txtCodigo.Text);
+                //FranjaHoraria.CodigoFranja = Int32.Parse(txtCodigo.Text);
             //    FranjaHoraria.HoraInicio = Convert.ToDateTime(txtHoraInicio.Text);
            //     FranjaHoraria.HoraFinal = Convert.ToDateTime(txtHoraFinal.Text);
                 FranjaHoraria.Eliminado = 0;
