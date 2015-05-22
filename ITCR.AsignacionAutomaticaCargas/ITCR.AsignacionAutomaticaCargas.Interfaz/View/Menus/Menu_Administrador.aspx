@@ -72,6 +72,8 @@
                         <a href="/View/Evaluacion/Registrar_Evaluacion_Profesor.aspx">Agregar</a>
                     </li>
                     <li class="col-md-4 col-sm-4">
+                         <h3>Estadisticas</h3>
+                        <a href="/View/Estadisticas/Consultar_Estadisticas.aspx">Consultar</a><br>
                     </li>
                     <li class="col-md-4 col-sm-4">
                     </li>
