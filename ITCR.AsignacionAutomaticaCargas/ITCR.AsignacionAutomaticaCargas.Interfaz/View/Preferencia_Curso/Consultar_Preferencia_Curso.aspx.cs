@@ -98,6 +98,34 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Curso
             }
         }
 
+
+
+        protected void dgPreferenciaCurso_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                Int16 IdPreferenciaCurso = Int16.Parse(e.Item.Cells[0].Text);
+
+                cPreferenciaCursoNegocios Preferencia = new cPreferenciaCursoNegocios(1, "A", 2, "B");
+
+                Preferencia.IdPreferenciaCurso = IdPreferenciaCurso;
+                DataTable TablaPreferencia = Preferencia.SeleccionarUno();
+
+
+                if (TablaPreferencia.Rows.Count > 0)
+                {
+                    Preferencia.Eliminado = 1;
+                    Preferencia.Actualizar();
+                }
+                
+                Response.Redirect("Consultar_Preferencia_Curso.aspx");
+            }
+
+            if (e.CommandName == "Editar")
+            {
+            }
+        }
+
         protected void btnConsultar_Click(object sender, EventArgs e)
         {
             Validate("vgConsultarPreferenciaCurso");

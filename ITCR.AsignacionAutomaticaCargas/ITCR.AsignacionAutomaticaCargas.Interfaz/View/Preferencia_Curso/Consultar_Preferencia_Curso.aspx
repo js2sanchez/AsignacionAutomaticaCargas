@@ -23,7 +23,7 @@
 
             </table>
             <asp:DataGrid ID="dgPreferenciaCurso" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped table-hover"
-                Width="100%">
+                Width="100%" OnItemCommand="dgPreferenciaCurso_ItemCommand">
                 <HeaderStyle Font-Size="Larger" ForeColor="Black" HorizontalAlign="Center" />
                 <Columns>
                     <asp:BoundColumn DataField="idPreferenciaCurso" HeaderText="idPreferenciaCurso" Visible="False"></asp:BoundColumn>
