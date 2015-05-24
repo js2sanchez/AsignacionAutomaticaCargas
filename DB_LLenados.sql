@@ -38,3 +38,10 @@ insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminad
 insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('A', 'Año',0);
 insert into DB_AsignacionCargas.dbo.modalidad(codigoModalidad,modalidad,eliminado) values ('Tri', 'Trimeste',0);
 select * from DB_AsignacionCargas.dbo.modalidad;
+
+-- Contactos
+insert into DB_AsignacionCargas.dbo.TipoPrioridad (tipoPrioridad,eliminado) values ('A',0);
+insert into DB_AsignacionCargas.dbo.TipoPrioridad (tipoPrioridad,eliminado) values ('B',0);
+insert into DB_AsignacionCargas.dbo.TipoPrioridad (tipoPrioridad,eliminado) values ('C',0);
+insert into DB_AsignacionCargas.dbo.TipoPrioridad (tipoPrioridad,eliminado) values ('D',0);
+select * from DB_AsignacionCargas.dbo.TipoPrioridad;
