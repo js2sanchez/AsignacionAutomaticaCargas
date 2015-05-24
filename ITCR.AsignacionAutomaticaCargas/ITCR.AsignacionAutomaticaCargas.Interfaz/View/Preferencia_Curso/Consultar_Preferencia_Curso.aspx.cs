@@ -117,8 +117,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Curso
                     Preferencia.Eliminado = 1;
                     Preferencia.Actualizar();
                 }
-                
-                Response.Redirect("Consultar_Preferencia_Curso.aspx");
+
+                cargarTablaPreferenciaCursos();
             }
 
             if (e.CommandName == "Editar")
