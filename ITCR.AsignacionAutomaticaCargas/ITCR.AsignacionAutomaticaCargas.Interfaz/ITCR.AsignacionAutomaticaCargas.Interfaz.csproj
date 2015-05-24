@@ -48,6 +48,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -294,6 +295,8 @@
     <Content Include="View\Curso\Consultar_Curso.aspx" />
     <Content Include="View\Departamento\Agregar_Departamento.aspx" />
     <Content Include="View\Departamento\Consultar_Departamento.aspx" />
+    <Content Include="View\Estadisticas\Consultar_Estadisticas.aspx" />
+    <Content Include="View\Estadisticas\Consultar_Estadisticas_Cursos.aspx" />
     <Content Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx" />
     <Content Include="View\Evaluacion\Registrar_Evaluacion_Profesor.aspx" />
     <Content Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx" />
@@ -304,6 +307,8 @@
     <Content Include="View\Menus\Menu_Profesor.aspx" />
     <Content Include="View\Periodo\Agregar_Periodo.aspx" />
     <Content Include="View\Periodo\Consultar_Periodo.aspx" />
+    <Content Include="View\Preferencia_Curso\Agregar_Preferencia_Curso.aspx" />
+    <Content Include="View\Preferencia_Curso\Consultar_Preferencia_Curso.aspx" />
     <Content Include="View\Preferencia_Horario\Agregar_Preferencia_Horario.aspx" />
     <Content Include="View\Preferencia_Horario\Consultar_Preferencia_Horario.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
@@ -524,6 +529,20 @@
     <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
       <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas.aspx.cs">
+      <DependentUpon>Consultar_Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas.aspx.designer.cs">
+      <DependentUpon>Consultar_Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas_Cursos.aspx.cs">
+      <DependentUpon>Consultar_Estadisticas_Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas_Cursos.aspx.designer.cs">
+      <DependentUpon>Consultar_Estadisticas_Cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx.cs">
       <DependentUpon>Consultar_Evaluacion_Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -593,6 +612,20 @@
     </Compile>
     <Compile Include="View\Periodo\Consultar_Periodo.aspx.designer.cs">
       <DependentUpon>Consultar_Periodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Preferencia_Curso\Agregar_Preferencia_Curso.aspx.cs">
+      <DependentUpon>Agregar_Preferencia_Curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Preferencia_Curso\Agregar_Preferencia_Curso.aspx.designer.cs">
+      <DependentUpon>Agregar_Preferencia_Curso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Preferencia_Curso\Consultar_Preferencia_Curso.aspx.cs">
+      <DependentUpon>Consultar_Preferencia_Curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Preferencia_Curso\Consultar_Preferencia_Curso.aspx.designer.cs">
+      <DependentUpon>Consultar_Preferencia_Curso.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Preferencia_Horario\Agregar_Preferencia_Horario.aspx.cs">
       <DependentUpon>Agregar_Preferencia_Horario.aspx</DependentUpon>

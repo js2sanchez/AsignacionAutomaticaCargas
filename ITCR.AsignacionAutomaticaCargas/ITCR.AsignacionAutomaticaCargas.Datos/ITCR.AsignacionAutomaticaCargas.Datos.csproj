@@ -44,6 +44,7 @@
     <Compile Include="ClasesBase\cCursoBase.cs" />
     <Compile Include="ClasesBase\cDepartamentoBase.cs" />
     <Compile Include="ClasesBase\cDiasFranjaBase.cs" />
+    <Compile Include="ClasesBase\cEstadisticaBase.cs" />
     <Compile Include="ClasesBase\cEvaluacionProfesorBase.cs" />
     <Compile Include="ClasesBase\cFranjaHorariaBase.cs" />
     <Compile Include="ClasesBase\cGradoAcademicoBase.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="ClasesDatos\cCursoDatos.cs" />
     <Compile Include="ClasesDatos\cDepartamentoDatos.cs" />
     <Compile Include="ClasesDatos\cDiasFranjaDatos.cs" />
+    <Compile Include="ClasesDatos\cEstadisticaDatos.cs" />
     <Compile Include="ClasesDatos\cEvaluacionProfesorDatos.cs" />
     <Compile Include="ClasesDatos\cFranjaHorariaDatos.cs" />
     <Compile Include="ClasesDatos\cGradoAcademicoDatos.cs" />

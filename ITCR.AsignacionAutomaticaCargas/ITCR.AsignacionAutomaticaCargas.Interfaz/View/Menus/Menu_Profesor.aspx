@@ -21,8 +21,8 @@
                     </li>
                     <li class="col-md-6 col-sm-6">
                         <h3>Solicitud de preferencia de cursos</h3>
-                        <a href="#">Consultar</a><br>
-                        <a href="#">Agregar</a>
+                        <a href="/View/Preferencia_Curso/Consultar_Preferencia_Curso.aspx">Consultar</a><br>
+                        <a href="/View/Preferencia_Curso/Agregar_Preferencia_Curso.aspx">Agregar</a>
                     </li>
                     <li class="col-md-6 col-sm-6">
                         <h3>Solicitud de preferencia de horarios</h3>
