@@ -4,7 +4,7 @@
 // Proyecto: AsignacionAutomaticaCargas
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'PreferenciaHorarios'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: sábado 11 de abril de 2015, 11:03:30 p.m.
+// Fecha: domingo, 24 de mayo de 2015, 8:00:59
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -50,6 +50,49 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
+		///		 <LI>Fk_idFranjaHoraria</LI>
+		///		 <LI>Fk_idPeriodo</LI>
+		///		 <LI>Fk_idProfesor</LI>
+		///		 <LI>Eliminado</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>IdPreferenciaHorarios</LI>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Insertar()
+		{
+			string operacion;
+            //SeguridadSoapClient wsseg = new SeguridadSoapClient();
+			try
+			{
+				//Construir aqui el string a guardar en la bitacora.
+				operacion = "Insertar cPreferenciaHorarios;"
+					+"Fk_idFranjaHoraria:"+Fk_idFranjaHoraria.ToString()+";"
+					+"Fk_idPeriodo:"+Fk_idPeriodo.ToString()+";"
+					+"Fk_idProfesor:"+Fk_idProfesor.ToString()+";"
+					+"Eliminado:"+Eliminado.ToString()+";";
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+				return base.Insertar();
+			}
+			catch (Exception ex)
+			{
+				//Construir el string a guardar en la bitácora en caso de error.
+				operacion = "Error Insertar cPreferenciaHorarios;"+ex.Message;
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				throw ex;
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Update. Actualiza una fila existente en la base de datos.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
 		///		 <LI>IdPreferenciaHorarios</LI>
 		///		 <LI>Fk_idFranjaHoraria</LI>
 		///		 <LI>Fk_idPeriodo</LI>
@@ -61,27 +104,96 @@ namespace ITCR.AsignacionAutomaticaCargas.Negocios
 		///		 <LI>CodError</LI>
 		/// </UL>
 		/// </remarks>
-		public override bool Insertar()
+		public override bool Actualizar()
 		{
 			string operacion;
-			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
+            //SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
-				operacion = "Insertar cPreferenciaHorarios;"
+				operacion = "Actualizar cPreferenciaHorarios;"
 					+"IdPreferenciaHorarios:"+IdPreferenciaHorarios.ToString()+";"
 					+"Fk_idFranjaHoraria:"+Fk_idFranjaHoraria.ToString()+";"
 					+"Fk_idPeriodo:"+Fk_idPeriodo.ToString()+";"
 					+"Fk_idProfesor:"+Fk_idProfesor.ToString()+";"
 					+"Eliminado:"+Eliminado.ToString()+";";
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
-				return base.Insertar();
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+				return base.Actualizar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
-				operacion = "Error Insertar cPreferenciaHorarios;"+ex.Message;
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				operacion = "Error Actualizar cPreferenciaHorarios;"+ex.Message;
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				throw ex;
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método Eliminar de lógica de negocios. Borra una fila en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdPreferenciaHorarios</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		/// </UL>
+		/// </remarks>
+		public override bool Eliminar()
+		{
+			string operacion;
+            //SeguridadSoapClient wsseg = new SeguridadSoapClient();
+			try
+			{
+				//Construir aqui el string a guardar en la bitacora.
+				operacion = "Eliminar cPreferenciaHorarios;"
+					+"IdPreferenciaHorarios:"+IdPreferenciaHorarios.ToString()+";";
+                //	wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+				return base.Eliminar();
+			}
+			catch (Exception ex)
+			{
+				//Construir el string a guardar en la bitácora en caso de error.
+				operacion = "Error Eliminar cPreferenciaHorarios;"+ex.Message;
+                //	wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+				throw ex;
+			}
+		}
+
+
+		/// <summary>
+		/// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
+		/// </summary>
+		/// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
+		/// <remarks>
+		/// Propiedades necesarias para este método: 
+		/// <UL>
+		///		 <LI>IdPreferenciaHorarios</LI>
+		/// </UL>
+		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
+		/// <UL>
+		///		 <LI>CodError</LI>
+		///		 <LI>IdPreferenciaHorarios</LI>
+		///		 <LI>Fk_idFranjaHoraria</LI>
+		///		 <LI>Fk_idPeriodo</LI>
+		///		 <LI>Fk_idProfesor</LI>
+		///		 <LI>Eliminado</LI>
+		/// </UL>
+		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
+		/// </remarks>
+		public override DataTable SeleccionarUno()
+		{
+			try
+			{
+				return base.SeleccionarUno();
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

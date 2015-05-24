@@ -26,15 +26,15 @@
                     </li>
                     <li class="col-md-6 col-sm-6">
                         <h3>Solicitud de preferencia de horarios</h3>
-                        <a href="#">Consultar</a><br>
-                        <a href="#">Agregar</a>
+                        <a href="/View/Preferencia_Horario/Consultar_Preferencia_Horario.aspx">Consultar</a><br>
+                        <a href="/View/Preferencia_Horario/Agregar_Preferencia_Horario.aspx">Agregar</a>
                     </li>
                 </ul>
             </div>
         </section>
         <section class="footer">
             <div class="col-xs-10 col-md-7 col-center text-center">
-                <h2>Instituto Tecnologico de Costa Rica </h2>
+                <h2>Instituto Tecnológico de Costa Rica </h2>
                 <h4>Copyright © 2015 Tech Forward All Rights Reserved </h4>
             </div>
         </section>
