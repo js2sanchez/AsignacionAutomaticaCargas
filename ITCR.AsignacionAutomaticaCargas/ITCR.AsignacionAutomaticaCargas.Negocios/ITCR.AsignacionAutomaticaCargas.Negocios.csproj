@@ -43,6 +43,7 @@
     <Compile Include="ClasesNegocios\cCursoNegocios.cs" />
     <Compile Include="ClasesNegocios\cDepartamentoNegocios.cs" />
     <Compile Include="ClasesNegocios\cDiasFranjaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cEstadisticaNegocios.cs" />
     <Compile Include="ClasesNegocios\cEvaluacionProfesorNegocios.cs" />
     <Compile Include="ClasesNegocios\cFranjaHorariaNegocios.cs" />
     <Compile Include="ClasesNegocios\cGradoAcademicoNegocios.cs" />
