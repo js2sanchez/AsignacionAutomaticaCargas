@@ -2,14 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="multipage">
         <section class="form-width">
-            <h3>Consultar grupos</h3>
+            <h3>Consultar Preferencia de Horario</h3>
             <asp:DataGrid ID="dgPreferenciaHorario" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped table-hover"
                 Width="100%" OnItemCommand="dgPreferenciaHorario_ItemCommand">
                 <HeaderStyle Font-Size="Larger" ForeColor="Black" HorizontalAlign="Center" />
                 <Columns>
                     <asp:BoundColumn DataField="idPreferenciaHorarios" HeaderText="idPrefenrenciaHorarios" Visible="False"></asp:BoundColumn>
                     <asp:BoundColumn DataField="fk_idPeriodo" HeaderText="Periodo"></asp:BoundColumn>
-                    <asp:BoundColumn DataField="fk_idFranjaHoraria" HeaderText="Horario con su/sus respectivos día/días"></asp:BoundColumn>
+                    <asp:BoundColumn DataField="fk_idFranjaHoraria" HeaderText="Horario de Preferencia"></asp:BoundColumn>
                     <asp:TemplateColumn HeaderText="Editar">
                         <ItemTemplate>
                             <asp:ImageButton ID="imgEditar" runat="server" Height="20px" ImageUrl="~/Content/images/editar.png" Width="20px" CommandName="Editar" />

@@ -23,6 +23,8 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Horario
         {
             cPreferenciaHorariosNegocios Horario = new cPreferenciaHorariosNegocios(1, "A", 2, "B");
             Horario.Eliminado = 0;
+            Horario.Fk_idProfesor = getIdProfesor();
+
             DataTable TablaHorario = Horario.Buscar();
 
             if (TablaHorario.Rows.Count > 0)
@@ -36,6 +38,34 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Horario
                     Fila.Cells[2].Text = obtenerHorario(Int32.Parse(Fila.Cells[2].Text));
                 }
             }
+        }
+
+        public Int16 getIdProfesor()
+        {
+            cUsuarioNegocios Usuario = new cUsuarioNegocios(1, "A", 2, "B");
+            Usuario.Login = Session["Login"].ToString();
+
+            DataTable TablaUsuario = Usuario.Buscar();
+
+            Int16 IdUsuario = 0;
+
+            if (TablaUsuario.Rows.Count > 0)
+            {
+                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["idUsuario"].ToString());
+            }
+
+            cProfesorNegocios Profesor = new cProfesorNegocios(1, "A", 2, "B");
+            Profesor.Fk_idUsuario = IdUsuario;
+
+            DataTable TablaProfesor = Profesor.Buscar();
+
+            Int16 IdProfesor = 0;
+            if (TablaProfesor.Rows.Count > 0)
+            {
+                IdProfesor = Int16.Parse(TablaProfesor.Rows[0]["idProfesor"].ToString());
+            }
+
+            return IdProfesor;
         }
 
         private string obtenerPeriodo(int pId)

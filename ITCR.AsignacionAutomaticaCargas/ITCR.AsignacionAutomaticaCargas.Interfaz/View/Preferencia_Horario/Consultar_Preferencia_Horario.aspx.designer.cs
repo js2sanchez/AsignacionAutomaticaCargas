@@ -13,24 +13,6 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Horario {
     public partial class Consultar_Preferencia_Horario {
         
         /// <summary>
-        /// drpPeriodo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpPeriodo;
-        
-        /// <summary>
-        /// cvPeriodo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvPeriodo;
-        
-        /// <summary>
         /// dgPreferenciaHorario control.
         /// </summary>
         /// <remarks>

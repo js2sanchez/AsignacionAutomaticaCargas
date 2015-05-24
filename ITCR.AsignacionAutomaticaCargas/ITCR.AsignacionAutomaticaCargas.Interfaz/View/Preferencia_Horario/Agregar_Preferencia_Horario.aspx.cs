@@ -96,7 +96,34 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Horaria
                 drpHorario.Items.Add(ItemHorario);
             }
         }
-        
+
+        public Int16 getIdProfesor()
+        {
+            cUsuarioNegocios Usuario = new cUsuarioNegocios(1, "A", 2, "B");
+            Usuario.Login = Session["Login"].ToString();
+
+            DataTable TablaUsuario = Usuario.Buscar();
+
+            Int16 IdUsuario = 0;
+
+            if (TablaUsuario.Rows.Count > 0)
+            {
+                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["idUsuario"].ToString());
+            }
+
+            cProfesorNegocios Profesor = new cProfesorNegocios(1, "A", 2, "B");
+            Profesor.Fk_idUsuario = IdUsuario;
+
+            DataTable TablaProfesor = Profesor.Buscar();
+
+            Int16 IdProfesor = 0;
+            if (TablaProfesor.Rows.Count > 0)
+            {
+                IdProfesor = Int16.Parse(TablaProfesor.Rows[0]["idProfesor"].ToString());
+            }
+
+            return IdProfesor;
+        } 
 
         protected void btnAgregar_Click(object sender, EventArgs e) {
             Validate("vgAgregarPreferenciaHorario");
@@ -109,23 +136,11 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Preferencia_Horaria
                 Horario.Eliminado = 0;
                 Horario.Fk_idFranjaHoraria = Int32.Parse(drpHorario.SelectedValue);
                 Horario.Fk_idPeriodo = Int32.Parse(drpPeriodo.SelectedValue);
+                Horario.Fk_idProfesor = getIdProfesor();
 
-                //Buscar 
-                cProfesorNegocios Profesor = new cProfesorNegocios(1, "A", 2, "B");
-                DataTable TablaProfesor = Profesor.Buscar();
-                Int16 IdProfesor = -1;
-                if (TablaProfesor.Rows.Count > 0)
-                {
-                    IdProfesor = Int16.Parse(TablaProfesor.Rows[0]["idProfesor"].ToString());
-                    Horario.Fk_idProfesor = IdProfesor;
-
-                    //Agregar curso
-                    Horario.Insertar();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
-                }
-                else{
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "error();", true);
-                }
+                //Agregar curso
+                Horario.Insertar();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "agregar();", true);
             }
         }
     }
