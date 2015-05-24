@@ -31,21 +31,27 @@ AS
     -- Insert statements for procedure here
     if @iidPeriodo = 0
     begin
-		select nombreCurso, codigoCurso,preferencia,COUNT(nombreCurso) as cantidad 
-		from [DB_AsignacionCargas].dbo.PreferenciasCurso a
+		select nombreCurso, codigoCurso,TipoPrioridad as preferencia,COUNT(nombreCurso) as cantidad 
+		from [DB_AsignacionCargas].dbo.PreferenciaCurso a
 		INNER JOIN [DB_AsignacionCargas].dbo.Curso b ON
-		a.fk_idCurso = b.idCurso
-		where b.eliminado = 0
-		group by nombreCurso,preferencia,codigoCurso
+		a.fk_idCurso = b.idCurso		
+		INNER JOIN [DB_AsignacionCargas].dbo.TipoPrioridad c ON 
+		c.idTipoPrioridad = a.fk_idTipoPrioridad	
+		where b.eliminado = 0 and
+		c.eliminado = 0
+		group by nombreCurso,TipoPrioridad,codigoCurso
 	end
 	else
 	begin 
-		select nombreCurso, codigoCurso,preferencia,COUNT(nombreCurso) as cantidad 
-		from [DB_AsignacionCargas].dbo.PreferenciasCurso a
+		select nombreCurso, codigoCurso,TipoPrioridad as preferencia,COUNT(nombreCurso) as cantidad 
+		from [DB_AsignacionCargas].dbo.PreferenciaCurso a
 		INNER JOIN [DB_AsignacionCargas].dbo.Curso b ON
-		a.fk_idCurso = b.idCurso
-		where b.eliminado = 0 and a.fk_idPeriodo = @iidPeriodo
-		group by nombreCurso,preferencia,codigoCurso
+		a.fk_idCurso = b.idCurso		
+		INNER JOIN [DB_AsignacionCargas].dbo.TipoPrioridad c ON 
+		c.idTipoPrioridad = a.fk_idTipoPrioridad	
+		where b.eliminado = 0 and
+		c.eliminado = 0 and  a.fk_idPeriodo = @iidPeriodo
+		group by nombreCurso,TipoPrioridad,codigoCurso 
 	end
 SELECT @iCodError=@@ERROR
 
