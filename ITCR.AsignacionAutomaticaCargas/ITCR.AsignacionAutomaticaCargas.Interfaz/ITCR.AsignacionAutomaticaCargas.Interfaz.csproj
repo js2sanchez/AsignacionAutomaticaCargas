@@ -44,6 +44,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -293,6 +294,8 @@
     <Content Include="View\Curso\Consultar_Curso.aspx" />
     <Content Include="View\Departamento\Agregar_Departamento.aspx" />
     <Content Include="View\Departamento\Consultar_Departamento.aspx" />
+    <Content Include="View\Estadisticas\Consultar_Estadisticas.aspx" />
+    <Content Include="View\Estadisticas\Consultar_Estadisticas_Cursos.aspx" />
     <Content Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx" />
     <Content Include="View\Evaluacion\Registrar_Evaluacion_Profesor.aspx" />
     <Content Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx" />
@@ -521,6 +524,20 @@
     <Compile Include="View\Departamento\Consultar_Departamento.aspx.designer.cs">
       <DependentUpon>Consultar_Departamento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas.aspx.cs">
+      <DependentUpon>Consultar_Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas.aspx.designer.cs">
+      <DependentUpon>Consultar_Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas_Cursos.aspx.cs">
+      <DependentUpon>Consultar_Estadisticas_Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Estadisticas\Consultar_Estadisticas_Cursos.aspx.designer.cs">
+      <DependentUpon>Consultar_Estadisticas_Cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Evaluacion\Consultar_Evaluacion_Profesor.aspx.cs">
       <DependentUpon>Consultar_Evaluacion_Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -537,12 +554,14 @@
     </Compile>
     <Compile Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx.cs">
       <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Franja_Horaria\Agregar_FranjaHoraria.aspx.designer.cs">
       <DependentUpon>Agregar_FranjaHoraria.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx.cs">
       <DependentUpon>Consultar_Franja_Horaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Franja_Horaria\Consultar_Franja_Horaria.aspx.designer.cs">
       <DependentUpon>Consultar_Franja_Horaria.aspx</DependentUpon>
