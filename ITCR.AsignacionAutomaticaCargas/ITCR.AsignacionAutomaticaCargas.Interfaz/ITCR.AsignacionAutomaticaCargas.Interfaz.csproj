@@ -312,6 +312,7 @@
     <Content Include="View\Preferencia_Curso\Consultar_Preferencia_Curso.aspx" />
     <Content Include="View\Preferencia_Horario\Agregar_Preferencia_Horario.aspx" />
     <Content Include="View\Preferencia_Horario\Consultar_Preferencia_Horario.aspx" />
+    <Content Include="View\Procesar\Procesar.aspx" />
     <Content Include="View\Profesor\Agregar_Profesor.aspx" />
     <Content Include="View\Profesor\Consultar_DetalleProfesor.aspx" />
     <Content Include="View\Profesor\Consultar_PerfilProfesor.aspx" />
@@ -648,6 +649,13 @@
     </Compile>
     <Compile Include="View\Preferencia_Horario\Consultar_Preferencia_Horario.aspx.designer.cs">
       <DependentUpon>Consultar_Preferencia_Horario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Procesar\Procesar.aspx.cs">
+      <DependentUpon>Procesar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Procesar\Procesar.aspx.designer.cs">
+      <DependentUpon>Procesar.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Profesor\Agregar_Profesor.aspx.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>

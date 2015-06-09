@@ -62,7 +62,7 @@
                     <li class="col-md-4 col-sm-4">
                         <h3>Procesos</h3>
                         <a href="#">Consultar</a><br>
-                        <a href="#">Agregar</a>
+                        <a href="/View/Procesar/Procesar.aspx">Agregar</a>
                     </li>
                 </ul>
                 <ul class="row list-unstyled">
