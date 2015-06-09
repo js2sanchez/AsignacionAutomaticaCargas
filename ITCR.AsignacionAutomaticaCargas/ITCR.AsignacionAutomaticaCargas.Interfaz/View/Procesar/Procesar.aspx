@@ -21,7 +21,7 @@
                     </td>
 
                     <td style="width: 204px">
-                        <asp:Button ID="btnConsultar" runat="server" class="btn btn-default" Text="Consultar"  /></td>
+                        <asp:Button ID="btnConsultar" runat="server" class="btn btn-default" Text="Consultar"  OnClick="btnConsultar_Click"  /></td>
                 </tr>
 
             </table>

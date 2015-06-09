@@ -61,7 +61,7 @@
                     </li>
                     <li class="col-md-4 col-sm-4">
                         <h3>Procesos</h3>
-                        <a href="#">Consultar</a><br>
+                        <a href="/View/Asignacion/Consultar_Asignacion">Consultar</a><br>
                         <a href="/View/Procesar/Procesar.aspx">Agregar</a>
                     </li>
                 </ul>

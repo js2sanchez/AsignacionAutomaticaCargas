@@ -55,5 +55,14 @@ namespace ITCR.AsignacionAutomaticaCargas.Interfaz.View.Procesar
                 drpPeriodo.Items.Add(ItemPeriodo);
             }
         }
+
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            Int32 periodo = Int32.Parse(drpPeriodo.SelectedValue);
+            Session["periodo"] = periodo;
+            Session["procesar"] = true;
+            Response.Redirect("/View/Asignacion/Consultar_Asignacion.aspx");
+        }
     }
 }
