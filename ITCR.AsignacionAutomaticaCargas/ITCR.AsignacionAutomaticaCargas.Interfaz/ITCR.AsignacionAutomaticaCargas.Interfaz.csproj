@@ -291,6 +291,7 @@
     <Content Include="View\Acerca de\Acerca_De.aspx" />
     <Content Include="View\Administrador\Agregar_Administrador.aspx" />
     <Content Include="View\Administrador\Consultar_Administrador.aspx" />
+    <Content Include="View\Asignacion\Consultar_Asignacion.aspx" />
     <Content Include="View\Curso\Agregar_Curso.aspx" />
     <Content Include="View\Curso\Consultar_Curso.aspx" />
     <Content Include="View\Departamento\Agregar_Departamento.aspx" />
@@ -500,6 +501,13 @@
     </Compile>
     <Compile Include="View\Administrador\Consultar_Administrador.aspx.designer.cs">
       <DependentUpon>Consultar_Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Asignacion\Consultar_Asignacion.aspx.cs">
+      <DependentUpon>Consultar_Asignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Asignacion\Consultar_Asignacion.aspx.designer.cs">
+      <DependentUpon>Consultar_Asignacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Curso\Agregar_Curso.aspx.cs">
       <DependentUpon>Agregar_Curso.aspx</DependentUpon>
